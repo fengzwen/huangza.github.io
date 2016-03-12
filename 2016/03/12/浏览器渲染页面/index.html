@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 浏览器渲染页面 · Andre Huang</title><meta name="description" content="浏览器渲染页面 - Andre Huang"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/huangza" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">浏览器渲染页面</h1><div class="post-time">2016年3月12日</div><div class="post-content"><h1 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h1><ol>
+<li>获取HTML、css、js文件</li>
+<li>将HTML代码形成<strong>DOM Tree</strong>，解析样式为<strong>CSSOM Tree</strong></li>
+<li>合并DOM和CSSOM，去除<em>不可见元素</em>以及设置了<em>display:none</em>属性的元素，<strong>构建render tree</strong></li>
+<li>对render tree的每个元素，其实也是DOM元素，计算其形状和位置，进行<strong>布局</strong></li>
+<li>将每个节点元素转化为实际像素<strong>绘制</strong>在视口上，也称“<strong>栅格化</strong>”</li>
+</ol>
+<p><strong>p.s.</strong></p>
+<p>不可见元素：&lt;html&gt;、&lt;head&gt;、&lt;meta&gt;、&lt;link&gt;、&lt;style&gt;、&lt;script&gt;等</p>
+<p>render tree（渲染树）：在 Webkit 中这些对象被称为渲染器或渲染对象，而在 Gecko 中称之为“frame”。在渲染树中，每一段文本字符串都表现为独立的渲染器。每一个渲染对象都包含与之对应的 DOM 对象，或者文本块，还加上计算过的样式。换言之，渲染树是一个文档对象模型的直观展示。</p>
+<h2 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当render tree中元素的某些属性需要更新，而这些元素只影响外观、风格，不影响元素在网页中的位置（如：background-color、border-color、visibility等），浏览器就会重新构造样式，也就是<strong>重绘</strong></p>
+<h2 id="重排"><a href="#重排" class="headerlink" title="重排"></a>重排</h2><ol>
+<li>DOM 操作（元素添加，删除，修改，或者元素顺序的改变）</li>
+<li>内容变化，包括表单域内的文本改变</li>
+<li>CSS 属性的计算或改变</li>
+<li>添加或删除样式表</li>
+<li>更改“类”的属性</li>
+<li>浏览器窗口的操作（缩放，滚动）</li>
+<li>伪类激活（:hover）</li>
+</ol>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/03/07/my-first-new-post/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Andre Huang</a>, unless otherwise noted.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

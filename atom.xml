@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-07T12:26:04.075Z</updated>
+  <updated>2016-03-12T15:52:54.084Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浏览器渲染页面</title>
+    <link href="http://yoursite.com/2016/03/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2/"/>
+    <id>http://yoursite.com/2016/03/12/浏览器渲染页面/</id>
+    <published>2016-03-12T15:47:55.000Z</published>
+    <updated>2016-03-12T15:52:54.084Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;浏览器渲染过程&quot;&gt;&lt;a href=&quot;#浏览器渲染过程&quot; class=&quot;headerlink&quot; title=&quot;浏览器渲染过程&quot;&gt;&lt;/a&gt;浏览器渲染过程&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;获取HTML、css、js文件&lt;/li&gt;
+&lt;li&gt;将HTML代码形成&lt;strong&gt;DOM Tree&lt;/strong&gt;，解析样式为&lt;strong&gt;CSSOM Tree&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;合并DOM和CSSOM，去除&lt;em&gt;不可见元素&lt;/em&gt;以及设置了&lt;em&gt;display:none&lt;/em&gt;属性的元素，&lt;strong&gt;构建render tree&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;对render tree的每个元素，其实也是DOM元素，计算其形状和位置，进行&lt;strong&gt;布局&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;将每个节点元素转化为实际像素&lt;strong&gt;绘制&lt;/strong&gt;在视口上，也称“&lt;strong&gt;栅格化&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;p.s.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不可见元素：&amp;lt;html&amp;gt;、&amp;lt;head&amp;gt;、&amp;lt;meta&amp;gt;、&amp;lt;link&amp;gt;、&amp;lt;style&amp;gt;、&amp;lt;script&amp;gt;等&lt;/p&gt;
+&lt;p&gt;render tree（渲染树）：在 Webkit 中这些对象被称为渲染器或渲染对象，而在 Gecko 中称之为“frame”。在渲染树中，每一段文本字符串都表现为独立的渲染器。每一个渲染对象都包含与之对应的 DOM 对象，或者文本块，还加上计算过的样式。换言之，渲染树是一个文档对象模型的直观展示。&lt;/p&gt;
+&lt;h2 id=&quot;重绘&quot;&gt;&lt;a href=&quot;#重绘&quot; class=&quot;headerlink&quot; title=&quot;重绘&quot;&gt;&lt;/a&gt;重绘&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当render tree中元素的某些属性需要更新，而这些元素只影响外观、风格，不影响元素在网页中的位置（如：background-color、border-color、visibility等），浏览器就会重新构造样式，也就是&lt;strong&gt;重绘&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;重排&quot;&gt;&lt;a href=&quot;#重排&quot; class=&quot;headerlink&quot; title=&quot;重排&quot;&gt;&lt;/a&gt;重排&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;DOM 操作（元素添加，删除，修改，或者元素顺序的改变）&lt;/li&gt;
+&lt;li&gt;内容变化，包括表单域内的文本改变&lt;/li&gt;
+&lt;li&gt;CSS 属性的计算或改变&lt;/li&gt;
+&lt;li&gt;添加或删除样式表&lt;/li&gt;
+&lt;li&gt;更改“类”的属性&lt;/li&gt;
+&lt;li&gt;浏览器窗口的操作（缩放，滚动）&lt;/li&gt;
+&lt;li&gt;伪类激活（:hover）&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;浏览器渲染过程&quot;&gt;&lt;a href=&quot;#浏览器渲染过程&quot; class=&quot;headerlink&quot; title=&quot;浏览器渲染过程&quot;&gt;&lt;/a&gt;浏览器渲染过程&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;获取HTML、css、js文件&lt;/li&gt;
+&lt;li&gt;将HTML代码形成&lt;strong&gt;DO
+    
+    </summary>
+    
+    
+      <category term="性能优化" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>my first new post</title>
