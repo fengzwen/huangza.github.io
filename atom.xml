@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-12T15:52:54.084Z</updated>
+  <updated>2016-03-13T16:29:26.614Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,17 +16,58 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>js数据类型的判定</title>
+    <link href="http://yoursite.com/2016/03/13/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E5%AE%9A/"/>
+    <id>http://yoursite.com/2016/03/13/js数据类型的判定/</id>
+    <published>2016-03-13T02:22:44.000Z</published>
+    <updated>2016-03-13T16:29:26.614Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;js数据类型&quot;&gt;&lt;a href=&quot;#js数据类型&quot; class=&quot;headerlink&quot; title=&quot;js数据类型&quot;&gt;&lt;/a&gt;js数据类型&lt;/h1&gt;&lt;h2 id=&quot;基本类型&quot;&gt;&lt;a href=&quot;#基本类型&quot; class=&quot;headerlink&quot; title=&quot;基本类型&quot;&gt;&lt;/a&gt;基本类型&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;因为我们可以操作保存在变量中的实际的值，所以这些类型是按值访问的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;String&lt;/li&gt;
+&lt;li&gt;Number&lt;/li&gt;
+&lt;li&gt;Boolean&lt;/li&gt;
+&lt;li&gt;Null&lt;/li&gt;
+&lt;li&gt;Undefined&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;引用类型&quot;&gt;&lt;a href=&quot;#引用类型&quot; class=&quot;headerlink&quot; title=&quot;引用类型&quot;&gt;&lt;/a&gt;引用类型&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;引用类型的值是保存在内存中的对象&lt;br&gt;在操作对象时，事实上是在操作对象的引用，而不是实际的对象&lt;br&gt;因此可以说引用类型的值是按引用访问（地址指针）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Object&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;# Undefined 类型&lt;/strong&gt;&lt;br&gt;Undefined 类型只有一个值——undefined&lt;br&gt;值得注意的是：包含 undefined 值的变量与尚未定义的变量还是不一样的，如下&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var message;	// 声明时默认取得了 undefined 值&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 下面这个变量没有声明&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// var age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(message);	// &amp;quot;undefined&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(age);	// 报错&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;但如果对 age（未声明变量） 使用 typeof 的话，也会返回 undefined&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;# Null 类型&lt;/strong&gt;&lt;br&gt;类似 Undefined，Null 类型也是只有一个值——null。&lt;br&gt;null表示一个空对象指针，因此&lt;em&gt;当使用 typeof null 时，会返回“object”&lt;/em&gt;&lt;br&gt;事实上，undefined 是派生自 null 值得，因此有如下判断时返回 true&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;alert(null == undefined);	// true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;js数据类型&quot;&gt;&lt;a href=&quot;#js数据类型&quot; class=&quot;headerlink&quot; title=&quot;js数据类型&quot;&gt;&lt;/a&gt;js数据类型&lt;/h1&gt;&lt;h2 id=&quot;基本类型&quot;&gt;&lt;a href=&quot;#基本类型&quot; class=&quot;headerlink&quot; title=&quot;基
+    
+    </summary>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>浏览器渲染页面</title>
     <link href="http://yoursite.com/2016/03/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2/"/>
     <id>http://yoursite.com/2016/03/12/浏览器渲染页面/</id>
     <published>2016-03-12T15:47:55.000Z</published>
-    <updated>2016-03-12T15:52:54.084Z</updated>
+    <updated>2016-03-13T03:04:42.683Z</updated>
     
     <content type="html">&lt;h1 id=&quot;浏览器渲染过程&quot;&gt;&lt;a href=&quot;#浏览器渲染过程&quot; class=&quot;headerlink&quot; title=&quot;浏览器渲染过程&quot;&gt;&lt;/a&gt;浏览器渲染过程&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;获取HTML、css、js文件&lt;/li&gt;
-&lt;li&gt;将HTML代码形成&lt;strong&gt;DOM Tree&lt;/strong&gt;，解析样式为&lt;strong&gt;CSSOM Tree&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;合并DOM和CSSOM，去除&lt;em&gt;不可见元素&lt;/em&gt;以及设置了&lt;em&gt;display:none&lt;/em&gt;属性的元素，&lt;strong&gt;构建render tree&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;对render tree的每个元素，其实也是DOM元素，计算其形状和位置，进行&lt;strong&gt;布局&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;获取 HTML、css、js文件&lt;/li&gt;
+&lt;li&gt;将HTML代码形成&lt;strong&gt;DOM Tree&lt;/strong&gt;，解析样式为 &lt;strong&gt;CSSOM Tree&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;合并 DOM 和 CSSOM，去除&lt;em&gt;不可见元素&lt;/em&gt;以及设置了&lt;em&gt;display:none&lt;/em&gt;属性的元素，&lt;strong&gt;构建 render tree&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;对 render tree 的每个元素，其实也是 DOM 元素，计算其形状和位置，进行&lt;strong&gt;布局&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;将每个节点元素转化为实际像素&lt;strong&gt;绘制&lt;/strong&gt;在视口上，也称“&lt;strong&gt;栅格化&lt;/strong&gt;”&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;p.s.&lt;/strong&gt;&lt;/p&gt;
@@ -47,8 +88,8 @@
     <summary type="html">
     
       &lt;h1 id=&quot;浏览器渲染过程&quot;&gt;&lt;a href=&quot;#浏览器渲染过程&quot; class=&quot;headerlink&quot; title=&quot;浏览器渲染过程&quot;&gt;&lt;/a&gt;浏览器渲染过程&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;获取HTML、css、js文件&lt;/li&gt;
-&lt;li&gt;将HTML代码形成&lt;strong&gt;DO
+&lt;li&gt;获取 HTML、css、js文件&lt;/li&gt;
+&lt;li&gt;将HTML代码形成&lt;strong&gt;D
     
     </summary>
     
