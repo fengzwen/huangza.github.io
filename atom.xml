@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-15T17:15:09.800Z</updated>
+  <updated>2016-03-27T02:01:09.545Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>XHR&amp;AJAX</title>
+    <title>去掉 IE 浏览器在 input 下自带的叉号和小眼睛</title>
+    <link href="http://yoursite.com/2016/03/27/%E5%8E%BB%E6%8E%89%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%A8input%E4%B8%8B%E8%87%AA%E5%B8%A6%E7%9A%84%C3%97/"/>
+    <id>http://yoursite.com/2016/03/27/去掉浏览器在input下自带的×/</id>
+    <published>2016-03-27T01:44:22.000Z</published>
+    <updated>2016-03-27T02:01:09.545Z</updated>
+    
+    <content type="html">&lt;p&gt;在 Edge 浏览器下，对于 input[type=”text”] 来说，当在输入框里输入内容时，输入框右边会出现一个“×”号，点击之后可以清除掉该 input 里的所有内容。这个按钮有时对用户来说是比较方便的。但有时，我们可能不需要这个按钮，或者是我们需要自己定制一个符合指定样式和功能的按钮，因此这时候就需要将浏览器自带的隐藏掉&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// 这个样式只是针对 IE 浏览器下 type=&amp;quot;text&amp;quot; 的 input&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input[type=&amp;quot;text&amp;quot;]::-ms-clear &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	display: none&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 也可以指定所有 input&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input::-ms-clear &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	display: none&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;同样，有时候并不需要使用到 input[type=”password”] 的小眼睛（通过点击可以看到密码的内容），因此隐藏的方法如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// 这个样式只是针对 IE 浏览器下 type=&amp;quot;text&amp;quot; 的 input&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;input[type=&amp;quot;password&amp;quot;]::-ms-reveal &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	display: none&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 Edge 浏览器下，对于 input[type=”text”] 来说，当在输入框里输入内容时，输入框右边会出现一个“×”号，点击之后可以清除掉该 input 里的所有内容。这个按钮有时对用户来说是比较方便的。但有时，我们可能不需要这个按钮，或者是我们需要自己定制一个符合
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XMLHttpRequest 对象以及 AJAX 技术</title>
     <link href="http://yoursite.com/2016/03/16/XHR-AJAX/"/>
     <id>http://yoursite.com/2016/03/16/XHR-AJAX/</id>
     <published>2016-03-15T17:13:24.000Z</published>
-    <updated>2016-03-15T17:15:09.800Z</updated>
+    <updated>2016-03-27T02:04:33.188Z</updated>
     
     <content type="html">&lt;h1 id=&quot;XMLHttpRequest-对象&quot;&gt;&lt;a href=&quot;#XMLHttpRequest-对象&quot; class=&quot;headerlink&quot; title=&quot;XMLHttpRequest 对象&quot;&gt;&lt;/a&gt;XMLHttpRequest 对象&lt;/h1&gt;&lt;p&gt;AJAX技术的核心。&lt;/p&gt;
 &lt;p&gt;是通过 MSXML 库中的一个 ActiveX 对象实现。&lt;/p&gt;
@@ -77,11 +100,11 @@
   </entry>
   
   <entry>
-    <title>setTimeout&amp;setInterval</title>
+    <title>超时调用和间隔调用</title>
     <link href="http://yoursite.com/2016/03/16/setTimeout-setInterval/"/>
     <id>http://yoursite.com/2016/03/16/setTimeout-setInterval/</id>
     <published>2016-03-15T17:12:55.000Z</published>
-    <updated>2016-03-15T17:15:28.209Z</updated>
+    <updated>2016-03-27T02:06:16.999Z</updated>
     
     <content type="html">&lt;p&gt;setTimeout() 和 setInterval() 都是 window 对象的方法。&lt;/p&gt;
 &lt;h1 id=&quot;超时调用（setTimeout）&quot;&gt;&lt;a href=&quot;#超时调用（setTimeout）&quot; class=&quot;headerlink&quot; title=&quot;超时调用（setTimeout）&quot;&gt;&lt;/a&gt;超时调用（setTimeout）&lt;/h1&gt;&lt;p&gt;顾名思义，setTimeout()通过设置超时值，以在指定的时间（超时值）过后的来执行某段代码。&lt;/p&gt;
@@ -111,11 +134,11 @@
   </entry>
   
   <entry>
-    <title>js数据类型的判定</title>
+    <title>JavaScript数据类型的判定</title>
     <link href="http://yoursite.com/2016/03/13/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E5%AE%9A/"/>
     <id>http://yoursite.com/2016/03/13/js数据类型的判定/</id>
     <published>2016-03-13T02:22:44.000Z</published>
-    <updated>2016-03-14T16:19:46.283Z</updated>
+    <updated>2016-03-27T02:05:36.167Z</updated>
     
     <content type="html">&lt;h1 id=&quot;js数据类型&quot;&gt;&lt;a href=&quot;#js数据类型&quot; class=&quot;headerlink&quot; title=&quot;js数据类型&quot;&gt;&lt;/a&gt;js数据类型&lt;/h1&gt;&lt;h2 id=&quot;基本类型&quot;&gt;&lt;a href=&quot;#基本类型&quot; class=&quot;headerlink&quot; title=&quot;基本类型&quot;&gt;&lt;/a&gt;基本类型&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;因为我们可以操作保存在变量中的实际的值，所以这些类型是按值访问的&lt;/p&gt;
