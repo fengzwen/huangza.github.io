@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-27T02:01:09.545Z</updated>
+  <updated>2016-03-29T16:38:34.737Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AngularJS 的数据绑定</title>
+    <link href="http://yoursite.com/2016/03/30/ng-bind-and-double-braces/"/>
+    <id>http://yoursite.com/2016/03/30/ng-bind-and-double-braces/</id>
+    <published>2016-03-29T16:29:43.000Z</published>
+    <updated>2016-03-29T16:38:34.737Z</updated>
+    
+    <content type="html">&lt;p&gt;使用 AngularJS，最重要的特点之一，就是它的数据绑定了。&lt;/p&gt;
+&lt;h1 id=&quot;共性&quot;&gt;&lt;a href=&quot;#共性&quot; class=&quot;headerlink&quot; title=&quot;共性&quot;&gt;&lt;/a&gt;共性&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;在 AJS 中，经常需要将给定的变量或者表达式，来添加在某个 html 元素内，这个时候经常用到的就是 ng-bind 和双括号（hexo不允许使用半角的花括号，因此只能用中文或者是全角符号了）了，如：
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div ng-init=&amp;quot;str=&amp;apos;hello&amp;apos;&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;p ng-bind=&amp;quot;str&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;p&amp;gt;｛｛str｝｝&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;在这个例子中，两个 p 元素都能在浏览器上显示 str 的内容。这也就是数据绑定的实现。
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;个性&quot;&gt;&lt;a href=&quot;#个性&quot; class=&quot;headerlink&quot; title=&quot;个性&quot;&gt;&lt;/a&gt;个性&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;尽管 ng-bind 和双括号的作用是一致的，但是两者仍然有一些区别。在两者之中，也更推荐使用 ng-bind。
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;可见性&quot;&gt;&lt;a href=&quot;#可见性&quot; class=&quot;headerlink&quot; title=&quot;可见性&quot;&gt;&lt;/a&gt;可见性&lt;/h2&gt;&lt;p&gt;所谓的“可见性”，就是指，在打开页面时，页面内会展现出 AJS 的变量或者表达式。&lt;br&gt;这是因为&lt;strong&gt;此时 HTML 内容已经加载完成，但 Angular 脚本尚未加载完成，因此还没有替换掉 HTML 中的双括号注释&lt;/strong&gt;。&lt;br&gt;事实上这个也是我在刚开始学习开发 Angular App 时遇到的问题。&lt;br&gt;这个问题可以通过使用 ng-bind 来解决，这也是利用了 ng-bind 和双括号在可见性的区别。&lt;br&gt;使用双括号时，HTML 加载时，会将这个注释视为字符串，直接打印出来；而使用 ng-bind 的时候，因为 ng-bind 是作为 HTML 元素的属性，因此对于用户是不可见的，因此不会将变量或者表达式暴露出来。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// 使用 ng-bind&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div ng-bind=&amp;quot;str&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 而不用 ｛｛｝｝&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div&amp;gt;｛｛str｝｝&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;p.s. 对于这个现象，还有另外一个解决方案，就是使用 ng-cloak，配合 css 的属性选择器，在 Angular 脚本加载完成前，将带有 ng-cloak 指令的节点隐藏掉，即：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[ng:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	display: none !important;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但是这个方法美中不足的在于，angular 加载完成之前，添加了这个指令的元素会处于空白状态，特别的，加在 body 时，会出现白屏状态。&lt;/p&gt;
+&lt;h2 id=&quot;性能&quot;&gt;&lt;a href=&quot;#性能&quot; class=&quot;headerlink&quot; title=&quot;性能&quot;&gt;&lt;/a&gt;性能&lt;/h2&gt;&lt;p&gt;并不是只因为使用双括号会暴露表达式就推荐使用 ng-bind 的。更重要的是两者在性能方面上的差异。&lt;br&gt;事实上，使用双括号，速度相对较慢。（这里是指数据较多的情况，下同）&lt;br&gt;造成性能差异的原因是：&lt;br&gt;    首先对于双括号来说，angular 会在每次 $digest 循环时对花括号内的变量进行检查，并且将变量的值重新输出到 HTML 中；&lt;br&gt;    而对于 ng-bind 这个指令来说，它会被放置一个 watcher 监听器，只有当监听器监听到它绑定的变量的值发生变化时，ng-bind 才会应用，更新绑定变量的值&lt;/p&gt;
+&lt;p&gt;引用 stackoverflow 里一位叫 Konstantin Krass 的朋友的尝试：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I am currently building a big single page app (~500 bindings per view). Changing from ｛｛｝｝ to strict ng-bind did save us about 20% in every scope.$digest.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 AngularJS，最重要的特点之一，就是它的数据绑定了。&lt;/p&gt;
+&lt;h1 id=&quot;共性&quot;&gt;&lt;a href=&quot;#共性&quot; class=&quot;headerlink&quot; title=&quot;共性&quot;&gt;&lt;/a&gt;共性&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;在 AJS 中，经常需要将给定的变量或者表达
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="AngularJS" scheme="http://yoursite.com/tags/AngularJS/"/>
+    
+  </entry>
   
   <entry>
     <title>去掉 IE 浏览器在 input 下自带的叉号和小眼睛</title>
@@ -232,7 +268,7 @@
     <link href="http://yoursite.com/2016/03/07/my-first-new-post/"/>
     <id>http://yoursite.com/2016/03/07/my-first-new-post/</id>
     <published>2016-03-07T12:00:04.000Z</published>
-    <updated>2016-03-07T12:26:04.075Z</updated>
+    <updated>2016-03-29T16:29:02.748Z</updated>
     
     <content type="html">&lt;p&gt;正文Test&lt;/p&gt;
 &lt;h1 id=&quot;这里是一级标题&quot;&gt;&lt;a href=&quot;#这里是一级标题&quot; class=&quot;headerlink&quot; title=&quot;这里是一级标题&quot;&gt;&lt;/a&gt;这里是一级标题&lt;/h1&gt;&lt;h2 id=&quot;这里是二级标题&quot;&gt;&lt;a href=&quot;#这里是二级标题&quot; class=&quot;headerlink&quot; title=&quot;这里是二级标题&quot;&gt;&lt;/a&gt;这里是二级标题&lt;/h2&gt;&lt;p&gt;点击进入我的&lt;a href=&quot;https://github.com/huangza&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
