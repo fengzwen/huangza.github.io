@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-29T16:40:06.096Z</updated>
+  <updated>2016-03-30T16:48:47.050Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在 hexo 新建一个不依赖模板配置的空白页面</title>
+    <link href="http://yoursite.com/2016/03/31/create-a-blank-html-page/"/>
+    <id>http://yoursite.com/2016/03/31/create-a-blank-html-page/</id>
+    <published>2016-03-30T16:40:37.000Z</published>
+    <updated>2016-03-30T16:48:47.050Z</updated>
+    
+    <content type="html">&lt;p&gt;hexo 有两个新建文件的命令，一个是 hexo new +文件名；另一个是 hexo new page +路径名&lt;/p&gt;
+&lt;p&gt;通过第二种方式，我们可以在 source 里新建一个目录，不同一般的文章，而是有一个新的页面，供我们访问，如 localhost:4000/about&lt;/p&gt;
+&lt;p&gt;但通过这种方法生成的页面 index.md，也会在 hexo g 的时候，被默认套用了配置模板。&lt;/p&gt;
+&lt;p&gt;那有没有办法可以使这个页面不会依赖于模板呢？答案是有的。&lt;/p&gt;
+&lt;p&gt;在 index.md 文件头加上这么一句，就可以解决： “&lt;strong&gt;layout: false&lt;/strong&gt;“&lt;/p&gt;
+&lt;p&gt;如：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;layout: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;title: &amp;quot;this is a title&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date: 2016-03-31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;p&amp;gt;hello world&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这样就大功告成了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo 有两个新建文件的命令，一个是 hexo new +文件名；另一个是 hexo new page +路径名&lt;/p&gt;
+&lt;p&gt;通过第二种方式，我们可以在 source 里新建一个目录，不同一般的文章，而是有一个新的页面，供我们访问，如 localhost:4000/ab
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>AngularJS 的数据绑定</title>
