@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-10T15:22:56.062Z</updated>
+  <updated>2016-04-11T14:02:56.358Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/04/10/learn-to-use-express/"/>
     <id>http://yoursite.com/2016/04/10/learn-to-use-express/</id>
     <published>2016-04-10T13:55:29.000Z</published>
-    <updated>2016-04-10T15:22:56.062Z</updated>
+    <updated>2016-04-11T14:02:56.358Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前-che-言-dan&quot;&gt;&lt;a href=&quot;#前-che-言-dan&quot; class=&quot;headerlink&quot; title=&quot;前(che)言(dan)&quot;&gt;&lt;/a&gt;前(che)言(dan)&lt;/h1&gt;&lt;p&gt;由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。&lt;br&gt;有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。&lt;/p&gt;
 &lt;h1 id=&quot;Express-实现的功能&quot;&gt;&lt;a href=&quot;#Express-实现的功能&quot; class=&quot;headerlink&quot; title=&quot;Express 实现的功能&quot;&gt;&lt;/a&gt;Express 实现的功能&lt;/h1&gt;&lt;ul&gt;
@@ -37,6 +37,17 @@
 &lt;li&gt;插件支持&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;Express-工程的结构&quot;&gt;&lt;a href=&quot;#Express-工程的结构&quot; class=&quot;headerlink&quot; title=&quot;Express 工程的结构&quot;&gt;&lt;/a&gt;Express 工程的结构&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;|—— bin/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|—— node_modules/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|—— public/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|	|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|	|—— images/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|	|—— javascripts/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|	|—— stylesheets/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|—— routes/				为指定路径组织返回内容，相当于 MVC 架构中的控制器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|	|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|	|—— index.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|—— views/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|	|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|	|—— index.jade&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|—— app.js				工程的入口&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;|—— package.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;app-js&quot;&gt;&lt;a href=&quot;#app-js&quot; class=&quot;headerlink&quot; title=&quot;app.js&quot;&gt;&lt;/a&gt;app.js&lt;/h2&gt;&lt;p&gt;app.set 是 Express 的参数设置工具，接受一个 key 和一个 value&lt;br&gt;可用的参数有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;basepath：基础地址，通常用于 res.redirect() 跳转&lt;/li&gt;
+&lt;li&gt;views：视图文件的目录，存放模版文件&lt;/li&gt;
+&lt;li&gt;view engine：视图模版引擎&lt;/li&gt;
+&lt;li&gt;view cache：启用视图缓存&lt;/li&gt;
+&lt;li&gt;case sensitive route：路径区分大小写&lt;/li&gt;
+&lt;li&gt;strict routing：严格路径，启用后不会忽略路径末尾的“/”&lt;/li&gt;
+&lt;li&gt;jsonp callback：开启透明的 JSONP 支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;app.use 用来启用大量的中间件&lt;br&gt;（在 Express3.X 时依赖于 Connect）&lt;br&gt;（而在4.X开始，除了 Static 其余则被分离成独立的模块，需要单独安装，使用 require 调用）&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var morgan = require(&amp;apos;morgan&amp;apos;); //logger模块的这个新名字真是神奇&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var bodyParser = require(&amp;apos;body-parser&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var methodOverride = require(&amp;apos;method-override&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.use(express.static(__dirname + &amp;apos;/public&amp;apos;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.use(morgan(&amp;apos;dev&amp;apos;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.use(bodyParser());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.use(methodOverride());&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
