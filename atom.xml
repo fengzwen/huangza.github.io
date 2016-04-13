@@ -136,8 +136,8 @@
   
   <entry>
     <title>去掉 IE 浏览器在 input 下自带的叉号和小眼睛</title>
-    <link href="http://yoursite.com/2016/03/27/%E5%8E%BB%E6%8E%89%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%A8input%E4%B8%8B%E8%87%AA%E5%B8%A6%E7%9A%84%C3%97/"/>
-    <id>http://yoursite.com/2016/03/27/去掉浏览器在input下自带的×/</id>
+    <link href="http://yoursite.com/2016/03/27/hide-special-function-in-IE/"/>
+    <id>http://yoursite.com/2016/03/27/hide-special-function-in-IE/</id>
     <published>2016-03-27T01:44:22.000Z</published>
     <updated>2016-03-27T02:01:09.545Z</updated>
     
@@ -254,8 +254,8 @@
   
   <entry>
     <title>JavaScript数据类型的判定</title>
-    <link href="http://yoursite.com/2016/03/13/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E5%AE%9A/"/>
-    <id>http://yoursite.com/2016/03/13/js数据类型的判定/</id>
+    <link href="http://yoursite.com/2016/03/13/type-examine/"/>
+    <id>http://yoursite.com/2016/03/13/type-examine/</id>
     <published>2016-03-13T02:22:44.000Z</published>
     <updated>2016-04-11T14:20:12.864Z</updated>
     
@@ -316,8 +316,8 @@
   
   <entry>
     <title>浏览器渲染页面</title>
-    <link href="http://yoursite.com/2016/03/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2/"/>
-    <id>http://yoursite.com/2016/03/12/浏览器渲染页面/</id>
+    <link href="http://yoursite.com/2016/03/12/how-browser-paint-a-page/"/>
+    <id>http://yoursite.com/2016/03/12/how-browser-paint-a-page/</id>
     <published>2016-03-12T15:47:55.000Z</published>
     <updated>2016-03-13T03:04:42.683Z</updated>
     
