@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-15T15:58:38.448Z</updated>
+  <updated>2016-04-20T15:22:10.570Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AngularJS 的 controller.js 要不要拆分</title>
+    <link href="http://yoursite.com/2016/04/20/whether-angularjs-controller-need-be-divided/"/>
+    <id>http://yoursite.com/2016/04/20/whether-angularjs-controller-need-be-divided/</id>
+    <published>2016-04-20T11:56:11.000Z</published>
+    <updated>2016-04-20T15:22:10.570Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;（摘自知乎）&lt;/strong&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;（摘自知乎）&lt;/strong&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="AngularJS" scheme="http://yoursite.com/tags/AngularJS/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 Express 框架来开发 Node.js 应用</title>
