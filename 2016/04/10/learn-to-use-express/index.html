@@ -1,4 +1,174 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 使用 Express 框架来开发 Node.js 应用 · Andre Huang</title><meta name="description" content="使用 Express 框架来开发 Node.js 应用 - Andre Huang"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/huangza" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about-me/" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">使用 Express 框架来开发 Node.js 应用</h1><div class="post-time">2016年4月10日</div><div class="post-content"><h1 id="前-che-言-dan"><a href="#前-che-言-dan" class="headerlink" title="前(che)言(dan)"></a>前(che)言(dan)</h1><p>由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。<br>有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。</p>
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用 Express 框架来开发 Node.js 应用 | Andre Huang</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="JavaScript,Node.js," />
+  
+
+  <meta name="description" content="前(che)言(dan)由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。
+Express 实现的功能
+为 http 模块提供了更高层的接口，而不用直接使用 Node.js 的 http 模块提供的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Express 框架来开发 Node.js 应用">
+<meta property="og:url" content="http://yoursite.com/2016/04/10/learn-to-use-express/index.html">
+<meta property="og:site_name" content="Andre Huang">
+<meta property="og:description" content="前(che)言(dan)由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。
+Express 实现的功能
+为 http 模块提供了更高层的接口，而不用直接使用 Node.js 的 http 模块提供的">
+<meta property="og:updated_time" content="2016-04-21T09:39:45.771Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 Express 框架来开发 Node.js 应用">
+<meta name="twitter:description" content="前(che)言(dan)由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。
+Express 实现的功能
+为 http 模块提供了更高层的接口，而不用直接使用 Node.js 的 http 模块提供的">
+
+  
+
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">入口</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">入口</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/project/"
+            target="_self"
+            >
+            项目
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前-che-言-dan"><span class="toc-text">前(che)言(dan)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Express-实现的功能"><span class="toc-text">Express 实现的功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Express-工程的结构"><span class="toc-text">Express 工程的结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#各文件说明"><span class="toc-text">各文件说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#app-js"><span class="toc-text">app.js</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-learn-to-use-express" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">使用 Express 框架来开发 Node.js 应用</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.04.10</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Andre Huang</span>
+        </span>
+      
+
+      
+
+
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="前-che-言-dan"><a href="#前-che-言-dan" class="headerlink" title="前(che)言(dan)"></a>前(che)言(dan)</h1><p>由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。<br>有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。</p>
 <h1 id="Express-实现的功能"><a href="#Express-实现的功能" class="headerlink" title="Express 实现的功能"></a>Express 实现的功能</h1><ul>
 <li>为 http 模块提供了更高层的接口，而不用直接使用 Node.js 的 http 模块提供的底层接口</li>
 <li>路由控制</li>
@@ -34,4 +204,142 @@
 </ul>
 <p>app.get 可以获取 setting 里 key 对应的 value<br>eg： app.get(‘/‘,routes.index); 是一个路由控制器，用户如果访问“/”路径，则由 routes.index 来控制</p>
 <p>app.use 用来启用大量的中间件<br>（在 Express3.X 时依赖于 Connect）<br>（而在4.X开始，除了 Static 其余则被分离成独立的模块，需要单独安装，使用 require 调用）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var morgan = require(&apos;morgan&apos;); //logger模块的这个新名字真是神奇</span><br><span class="line">var bodyParser = require(&apos;body-parser&apos;);</span><br><span class="line">var methodOverride = require(&apos;method-override&apos;);</span><br><span class="line"></span><br><span class="line">app.use(express.static(__dirname + &apos;/public&apos;));</span><br><span class="line">app.use(morgan(&apos;dev&apos;));</span><br><span class="line">app.use(bodyParser());</span><br><span class="line">app.use(methodOverride());</span><br></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/04/20/whether-angularjs-controller-need-be-divided/" class="prev">PRVE</a><a href="/2016/03/31/create-a-blank-html-page/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Andre Huang</a>, unless otherwise noted.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/project/"
+              target="_self"
+              >
+              项目
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

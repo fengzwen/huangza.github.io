@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>（补充）重绘和重排 | Andre Huang</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="CSS," />
+  
+
+  <meta name="description" content="触发重排的操作1. DOM 元素的几何属性变化当DOM元素的几何属性变化时，渲染树中的相关节点就会失效，浏览器会根据DOM元素的变化重建构建渲染树中失效的节点。之后，会根据新的渲染树重新绘制这部分页面。而且，当前元素的重排也许会带来相关元素的重排。例如，容器节点的渲染树改变时，会触发子节点的重新计算，也会触发其后续兄弟节点的重排，祖先节点需要重新计算子节点的尺寸也会产生重排。最后，每个元素都将发生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="（补充）重绘和重排">
+<meta property="og:url" content="http://yoursite.com/2016/08/20/repaint-reflow-addition/index.html">
+<meta property="og:site_name" content="Andre Huang">
+<meta property="og:description" content="触发重排的操作1. DOM 元素的几何属性变化当DOM元素的几何属性变化时，渲染树中的相关节点就会失效，浏览器会根据DOM元素的变化重建构建渲染树中失效的节点。之后，会根据新的渲染树重新绘制这部分页面。而且，当前元素的重排也许会带来相关元素的重排。例如，容器节点的渲染树改变时，会触发子节点的重新计算，也会触发其后续兄弟节点的重排，祖先节点需要重新计算子节点的尺寸也会产生重排。最后，每个元素都将发生">
+<meta property="og:updated_time" content="2016-08-20T15:56:05.804Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="（补充）重绘和重排">
+<meta name="twitter:description" content="触发重排的操作1. DOM 元素的几何属性变化当DOM元素的几何属性变化时，渲染树中的相关节点就会失效，浏览器会根据DOM元素的变化重建构建渲染树中失效的节点。之后，会根据新的渲染树重新绘制这部分页面。而且，当前元素的重排也许会带来相关元素的重排。例如，容器节点的渲染树改变时，会触发子节点的重新计算，也会触发其后续兄弟节点的重排，祖先节点需要重新计算子节点的尺寸也会产生重排。最后，每个元素都将发生">
+
+  
+
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">入口</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">入口</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/project/"
+            target="_self"
+            >
+            项目
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#触发重排的操作"><span class="toc-text">触发重排的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DOM-元素的几何属性变化"><span class="toc-text">1. DOM 元素的几何属性变化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DOM-树的结构变化"><span class="toc-text">2. DOM 树的结构变化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-获取某些属性"><span class="toc-text">3. 获取某些属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-其他操作（如：调整浏览器窗口大小）"><span class="toc-text">4. 其他操作（如：调整浏览器窗口大小）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化实践"><span class="toc-text">优化实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-合并操作"><span class="toc-text">1. 合并操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-脱离文档流"><span class="toc-text">2. 脱离文档流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-整体添加至文档"><span class="toc-text">3. 整体添加至文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-隐藏状态修改属性"><span class="toc-text">4. 隐藏状态修改属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-缓存"><span class="toc-text">5. 缓存</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-repaint-reflow-addition" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">（补充）重绘和重排</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.08.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Andre Huang</span>
+        </span>
+      
+
+      
+
+
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="触发重排的操作"><a href="#触发重排的操作" class="headerlink" title="触发重排的操作"></a>触发重排的操作</h1><h2 id="1-DOM-元素的几何属性变化"><a href="#1-DOM-元素的几何属性变化" class="headerlink" title="1. DOM 元素的几何属性变化"></a>1. DOM 元素的几何属性变化</h2><p>当DOM元素的几何属性变化时，渲染树中的相关节点就会失效，浏览器会根据DOM元素的变化重建构建渲染树中失效的节点。之后，会根据新的渲染树重新绘制这部分页面。而且，当前元素的重排也许会带来相关元素的重排。例如，容器节点的渲染树改变时，会触发子节点的重新计算，也会触发其后续兄弟节点的重排，祖先节点需要重新计算子节点的尺寸也会产生重排。最后，每个元素都将发生重绘。可见，重排一定会引起浏览器的重绘，一个元素的重排通常会带来一系列的反应，甚至触发整个文档的重排和重绘，性能代价是高昂的。</p>
+<h2 id="2-DOM-树的结构变化"><a href="#2-DOM-树的结构变化" class="headerlink" title="2. DOM 树的结构变化"></a>2. DOM 树的结构变化</h2><p>当DOM树的++结构变化++时，例如<strong>节点的增减、移动</strong>等，也会触发重排。浏览器引擎布局的过程，类似于树的前序遍历，是一个从上到下从左到右的过程。++通常在这个过程中，当前元素不会再影响其前面已经遍历过的元素++。所以，如果在body最前面插入一个元素，会导致整个文档的重新渲染，而在其后插入一个元素，则不会影响到前面的元素。</p>
+<h2 id="3-获取某些属性"><a href="#3-获取某些属性" class="headerlink" title="3. 获取某些属性"></a>3. 获取某些属性</h2><p>浏览器引擎可能会针对重排做了优化。比如Opera，它会等到有足够数量的变化发生，或者等到一定的时间，或者等一个线程结束，再一起处理，这样就只发生一次重排。但除了渲染树的直接变化，当获取一些属性时，浏览器为取得正确的值也会触发重排。这样就使得浏览器的优化失效了。这些属性包括：offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight、getComputedStyle() (currentStyle in IE)。所以，在多次使用这些值时应进行缓存。</p>
+<h2 id="4-其他操作（如：调整浏览器窗口大小）"><a href="#4-其他操作（如：调整浏览器窗口大小）" class="headerlink" title="4. 其他操作（如：调整浏览器窗口大小）"></a>4. 其他操作（如：调整浏览器窗口大小）</h2><h1 id="优化实践"><a href="#优化实践" class="headerlink" title="优化实践"></a>优化实践</h1><h2 id="1-合并操作"><a href="#1-合并操作" class="headerlink" title="1. 合并操作"></a>1. 合并操作</h2><p>将多次改变属性的操作合并成一次，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// JS:</span><br><span class="line">var changeDiv = document.getElementById(‘changeDiv’);</span><br><span class="line">changeDiv.style.color = ‘#093′;</span><br><span class="line">changeDiv.style.background = ‘#eee&apos;;</span><br><span class="line">changeDiv.style.height = ‘200px&apos;;</span><br><span class="line"></span><br><span class="line">// 可以合并为：</span><br><span class="line">// CSS:</span><br><span class="line">div.changeDiv &#123;</span><br><span class="line">background: #eee;</span><br><span class="line">color: #093;</span><br><span class="line">height: 200px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// JS:</span><br><span class="line">document.getElementById(‘changeDiv’).className = ‘changeDiv&apos;;</span><br></pre></td></tr></table></figure>
+<h2 id="2-脱离文档流"><a href="#2-脱离文档流" class="headerlink" title="2. 脱离文档流"></a>2. 脱离文档流</h2><p>将需要多次重排的元素，++position属性设为absolute或fixed++，这样此元素就脱离了文档流，它的变化不会影响到其他元素。</p>
+<p>例如<strong>有动画效果</strong>的元素就最好设置为<strong>绝对定位</strong>。</p>
+<h2 id="3-整体添加至文档"><a href="#3-整体添加至文档" class="headerlink" title="3. 整体添加至文档"></a>3. 整体添加至文档</h2><p>在内存中多次操作节点，完成后再添加到文档中去。例如要异步获取表格数据，渲染到页面。可以++先取得数据后在内存中构建整个表格的html片段，再一次性添加到文档中++去，而不是循环添加每一行。</p>
+<h2 id="4-隐藏状态修改属性"><a href="#4-隐藏状态修改属性" class="headerlink" title="4. 隐藏状态修改属性"></a>4. 隐藏状态修改属性</h2><p>由于display属性为none的元素不在渲染树中，对隐藏的元素操作不会引发其他元素的重排。<em>如果要对一个元素进行复杂的操作时，可以先隐藏它，操作完成后再显示。这样只在隐藏和显示时触发2次重排</em>。</p>
+<h2 id="5-缓存"><a href="#5-缓存" class="headerlink" title="5. 缓存"></a>5. 缓存</h2><p>在需要经常取那些引起浏览器重排的属性值时，要缓存到变量</p>
+<p>(参考：<a href="http://blog.jobbole.com/46722/" target="_blank" rel="external">http://blog.jobbole.com/46722/</a>)</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/project/"
+              target="_self"
+              >
+              项目
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

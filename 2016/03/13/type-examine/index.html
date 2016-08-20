@@ -1,4 +1,216 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> JavaScript数据类型的判定 · Andre Huang</title><meta name="description" content="JavaScript数据类型的判定 - Andre Huang"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/huangza" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about-me/" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">JavaScript数据类型的判定</h1><div class="post-time">2016年3月13日</div><div class="post-content"><h1 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h1><h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2><blockquote>
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript数据类型的判定 | Andre Huang</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Javascript," />
+  
+
+  <meta name="description" content="js数据类型基本类型
+因为我们可以操作保存在变量中的实际的值，所以这些类型是按值访问的
+
+
+String
+Number
+Boolean
+Null
+Undefined
+
+引用类型
+引用类型的值是保存在内存中的对象在操作对象时，事实上是在操作对象的引用，而不是实际的对象因此可以说引用类型的值是按引用访问（地址指针）
+
+
+Object
+
+# Undefined 类型Undefined 类型只有一个值——">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript数据类型的判定">
+<meta property="og:url" content="http://yoursite.com/2016/03/13/type-examine/index.html">
+<meta property="og:site_name" content="Andre Huang">
+<meta property="og:description" content="js数据类型基本类型
+因为我们可以操作保存在变量中的实际的值，所以这些类型是按值访问的
+
+
+String
+Number
+Boolean
+Null
+Undefined
+
+引用类型
+引用类型的值是保存在内存中的对象在操作对象时，事实上是在操作对象的引用，而不是实际的对象因此可以说引用类型的值是按引用访问（地址指针）
+
+
+Object
+
+# Undefined 类型Undefined 类型只有一个值——">
+<meta property="og:updated_time" content="2016-04-11T14:20:12.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript数据类型的判定">
+<meta name="twitter:description" content="js数据类型基本类型
+因为我们可以操作保存在变量中的实际的值，所以这些类型是按值访问的
+
+
+String
+Number
+Boolean
+Null
+Undefined
+
+引用类型
+引用类型的值是保存在内存中的对象在操作对象时，事实上是在操作对象的引用，而不是实际的对象因此可以说引用类型的值是按引用访问（地址指针）
+
+
+Object
+
+# Undefined 类型Undefined 类型只有一个值——">
+
+  
+
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">入口</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">入口</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/project/"
+            target="_self"
+            >
+            项目
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#js数据类型"><span class="toc-text">js数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本类型"><span class="toc-text">基本类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用类型"><span class="toc-text">引用类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#typeof-操作符"><span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#instanceof-区别引用类型"><span class="toc-text">instanceof 区别引用类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用内置对象的-class-属性来判断"><span class="toc-text">使用内置对象的 class 属性来判断</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Object-prototype-toString-call-来判断"><span class="toc-text">使用 Object.prototype.toString.call() 来判断</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-type-examine" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">JavaScript数据类型的判定</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.03.13</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Andre Huang</span>
+        </span>
+      
+
+      
+
+
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h1><h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2><blockquote>
 <p>因为我们可以操作保存在变量中的实际的值，所以这些类型是按值访问的</p>
 </blockquote>
 <ul>
@@ -40,4 +252,142 @@
 <li>返回三个字符串”[object “, class, 以及 “]”连接后的新字符串</li>
 </ol>
 <p>所以判断变量类型的方法可以如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 直接传入待判定变量和匹配类型</span><br><span class="line">// 返回布尔值</span><br><span class="line">function isType(data, type) &#123;</span><br><span class="line">	return Object.prototype.toString.call(data).slice(8,-1) === type ? true : false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 直接传入某个变量</span><br><span class="line">// 返回该变量的类型</span><br><span class="line">function getType(data) &#123;</span><br><span class="line">	return Object.prototype.toString.call(data).slice(8,-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/03/16/setTimeout-setInterval/" class="prev">PRVE</a><a href="/2016/03/12/how-browser-paint-a-page/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Andre Huang</a>, unless otherwise noted.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/project/"
+              target="_self"
+              >
+              项目
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

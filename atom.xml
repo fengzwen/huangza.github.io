@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-20T15:22:10.570Z</updated>
+  <updated>2016-08-20T15:56:05.804Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>（补充）重绘和重排</title>
+    <link href="http://yoursite.com/2016/08/20/repaint-reflow-addition/"/>
+    <id>http://yoursite.com/2016/08/20/repaint-reflow-addition/</id>
+    <published>2016-08-20T15:22:23.000Z</published>
+    <updated>2016-08-20T15:56:05.804Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;触发重排的操作&quot;&gt;&lt;a href=&quot;#触发重排的操作&quot; class=&quot;headerlink&quot; title=&quot;触发重排的操作&quot;&gt;&lt;/a&gt;触发重排的操作&lt;/h1&gt;&lt;h2 id=&quot;1-DOM-元素的几何属性变化&quot;&gt;&lt;a href=&quot;#1-DOM-元素的几何属性变化&quot; class=&quot;headerlink&quot; title=&quot;1. DOM 元素的几何属性变化&quot;&gt;&lt;/a&gt;1. DOM 元素的几何属性变化&lt;/h2&gt;&lt;p&gt;当DOM元素的几何属性变化时，渲染树中的相关节点就会失效，浏览器会根据DOM元素的变化重建构建渲染树中失效的节点。之后，会根据新的渲染树重新绘制这部分页面。而且，当前元素的重排也许会带来相关元素的重排。例如，容器节点的渲染树改变时，会触发子节点的重新计算，也会触发其后续兄弟节点的重排，祖先节点需要重新计算子节点的尺寸也会产生重排。最后，每个元素都将发生重绘。可见，重排一定会引起浏览器的重绘，一个元素的重排通常会带来一系列的反应，甚至触发整个文档的重排和重绘，性能代价是高昂的。&lt;/p&gt;
+&lt;h2 id=&quot;2-DOM-树的结构变化&quot;&gt;&lt;a href=&quot;#2-DOM-树的结构变化&quot; class=&quot;headerlink&quot; title=&quot;2. DOM 树的结构变化&quot;&gt;&lt;/a&gt;2. DOM 树的结构变化&lt;/h2&gt;&lt;p&gt;当DOM树的++结构变化++时，例如&lt;strong&gt;节点的增减、移动&lt;/strong&gt;等，也会触发重排。浏览器引擎布局的过程，类似于树的前序遍历，是一个从上到下从左到右的过程。++通常在这个过程中，当前元素不会再影响其前面已经遍历过的元素++。所以，如果在body最前面插入一个元素，会导致整个文档的重新渲染，而在其后插入一个元素，则不会影响到前面的元素。&lt;/p&gt;
+&lt;h2 id=&quot;3-获取某些属性&quot;&gt;&lt;a href=&quot;#3-获取某些属性&quot; class=&quot;headerlink&quot; title=&quot;3. 获取某些属性&quot;&gt;&lt;/a&gt;3. 获取某些属性&lt;/h2&gt;&lt;p&gt;浏览器引擎可能会针对重排做了优化。比如Opera，它会等到有足够数量的变化发生，或者等到一定的时间，或者等一个线程结束，再一起处理，这样就只发生一次重排。但除了渲染树的直接变化，当获取一些属性时，浏览器为取得正确的值也会触发重排。这样就使得浏览器的优化失效了。这些属性包括：offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight、getComputedStyle() (currentStyle in IE)。所以，在多次使用这些值时应进行缓存。&lt;/p&gt;
+&lt;h2 id=&quot;4-其他操作（如：调整浏览器窗口大小）&quot;&gt;&lt;a href=&quot;#4-其他操作（如：调整浏览器窗口大小）&quot; class=&quot;headerlink&quot; title=&quot;4. 其他操作（如：调整浏览器窗口大小）&quot;&gt;&lt;/a&gt;4. 其他操作（如：调整浏览器窗口大小）&lt;/h2&gt;&lt;h1 id=&quot;优化实践&quot;&gt;&lt;a href=&quot;#优化实践&quot; class=&quot;headerlink&quot; title=&quot;优化实践&quot;&gt;&lt;/a&gt;优化实践&lt;/h1&gt;&lt;h2 id=&quot;1-合并操作&quot;&gt;&lt;a href=&quot;#1-合并操作&quot; class=&quot;headerlink&quot; title=&quot;1. 合并操作&quot;&gt;&lt;/a&gt;1. 合并操作&lt;/h2&gt;&lt;p&gt;将多次改变属性的操作合并成一次，如：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// JS:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var changeDiv = document.getElementById(‘changeDiv’);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;changeDiv.style.color = ‘#093′;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;changeDiv.style.background = ‘#eee&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;changeDiv.style.height = ‘200px&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 可以合并为：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// CSS:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;div.changeDiv &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;background: #eee;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;color: #093;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;height: 200px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// JS:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;document.getElementById(‘changeDiv’).className = ‘changeDiv&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2-脱离文档流&quot;&gt;&lt;a href=&quot;#2-脱离文档流&quot; class=&quot;headerlink&quot; title=&quot;2. 脱离文档流&quot;&gt;&lt;/a&gt;2. 脱离文档流&lt;/h2&gt;&lt;p&gt;将需要多次重排的元素，++position属性设为absolute或fixed++，这样此元素就脱离了文档流，它的变化不会影响到其他元素。&lt;/p&gt;
+&lt;p&gt;例如&lt;strong&gt;有动画效果&lt;/strong&gt;的元素就最好设置为&lt;strong&gt;绝对定位&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;3-整体添加至文档&quot;&gt;&lt;a href=&quot;#3-整体添加至文档&quot; class=&quot;headerlink&quot; title=&quot;3. 整体添加至文档&quot;&gt;&lt;/a&gt;3. 整体添加至文档&lt;/h2&gt;&lt;p&gt;在内存中多次操作节点，完成后再添加到文档中去。例如要异步获取表格数据，渲染到页面。可以++先取得数据后在内存中构建整个表格的html片段，再一次性添加到文档中++去，而不是循环添加每一行。&lt;/p&gt;
+&lt;h2 id=&quot;4-隐藏状态修改属性&quot;&gt;&lt;a href=&quot;#4-隐藏状态修改属性&quot; class=&quot;headerlink&quot; title=&quot;4. 隐藏状态修改属性&quot;&gt;&lt;/a&gt;4. 隐藏状态修改属性&lt;/h2&gt;&lt;p&gt;由于display属性为none的元素不在渲染树中，对隐藏的元素操作不会引发其他元素的重排。&lt;em&gt;如果要对一个元素进行复杂的操作时，可以先隐藏它，操作完成后再显示。这样只在隐藏和显示时触发2次重排&lt;/em&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;5-缓存&quot;&gt;&lt;a href=&quot;#5-缓存&quot; class=&quot;headerlink&quot; title=&quot;5. 缓存&quot;&gt;&lt;/a&gt;5. 缓存&lt;/h2&gt;&lt;p&gt;在需要经常取那些引起浏览器重排的属性值时，要缓存到变量&lt;/p&gt;
+&lt;p&gt;(参考：&lt;a href=&quot;http://blog.jobbole.com/46722/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.jobbole.com/46722/&lt;/a&gt;)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;触发重排的操作&quot;&gt;&lt;a href=&quot;#触发重排的操作&quot; class=&quot;headerlink&quot; title=&quot;触发重排的操作&quot;&gt;&lt;/a&gt;触发重排的操作&lt;/h1&gt;&lt;h2 id=&quot;1-DOM-元素的几何属性变化&quot;&gt;&lt;a href=&quot;#1-DOM-元素的几何属性变化&quot; c
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>AngularJS 的 controller.js 要不要拆分</title>
@@ -413,7 +444,7 @@
     <link href="http://yoursite.com/2016/03/07/hello-world/"/>
     <id>http://yoursite.com/2016/03/07/hello-world/</id>
     <published>2016-03-07T02:48:04.059Z</published>
-    <updated>2016-03-07T02:48:04.061Z</updated>
+    <updated>2016-08-20T08:48:49.167Z</updated>
     
     <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
