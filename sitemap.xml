@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/08/21/hoisting/</loc>
+    
+    <lastmod>2016-08-20T16:08:07.471Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/20/repaint-reflow-addition/</loc>
     
     <lastmod>2016-08-20T15:56:05.804Z</lastmod>

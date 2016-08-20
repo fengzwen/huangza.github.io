@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript 变量声明提升 | Andre Huang</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="JavaScript," />
+  
+
+  <meta name="description" content="在 JavaScript 中，++变量声明++和++函数声明++会被引擎隐式地提升到当前作用域的顶部。
+如：123456var b = 1;function a() &amp;#123;    console.log(typeof b);    var b = 3;&amp;#125;a();
+输出的结果会是：undefined.  而不是 1。
+这就是因为变量 b 的声明被提前了，typeof 操作符操作的变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 变量声明提升">
+<meta property="og:url" content="http://yoursite.com/2016/08/21/hoisting/index.html">
+<meta property="og:site_name" content="Andre Huang">
+<meta property="og:description" content="在 JavaScript 中，++变量声明++和++函数声明++会被引擎隐式地提升到当前作用域的顶部。
+如：123456var b = 1;function a() &amp;#123;    console.log(typeof b);    var b = 3;&amp;#125;a();
+输出的结果会是：undefined.  而不是 1。
+这就是因为变量 b 的声明被提前了，typeof 操作符操作的变量">
+<meta property="og:updated_time" content="2016-08-20T16:08:07.471Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 变量声明提升">
+<meta name="twitter:description" content="在 JavaScript 中，++变量声明++和++函数声明++会被引擎隐式地提升到当前作用域的顶部。
+如：123456var b = 1;function a() &amp;#123;    console.log(typeof b);    var b = 3;&amp;#125;a();
+输出的结果会是：undefined.  而不是 1。
+这就是因为变量 b 的声明被提前了，typeof 操作符操作的变量">
+
+  
+
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">入口</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">入口</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/project/"
+            target="_self"
+            >
+            项目
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-hoisting" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">JavaScript 变量声明提升</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.08.21</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Andre Huang</span>
+        </span>
+      
+
+      
+
+
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>在 JavaScript 中，++变量声明++和++函数声明++会被引擎隐式地提升到当前作用域的顶部。</p>
+<p>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var b = 1;</span><br><span class="line">function a() &#123;</span><br><span class="line">    console.log(typeof b);</span><br><span class="line">    var b = 3;</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure></p>
+<p>输出的结果会是：undefined.  而不是 1。</p>
+<p>这就是因为变量 b 的声明被提前了，typeof 操作符操作的变量不是全局变量 b；而是待赋值的局部变量 b。</p>
+<p>同理，函数的声明也如此：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var foo = function()&#123;</span><br><span class="line">    console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">function f1() &#123;</span><br><span class="line">    console.log(typeof foo);    // &quot;function&quot;</span><br><span class="line">&#125;</span><br><span class="line">function f2() &#123;</span><br><span class="line">    console.log(typeof foo);    // &quot;undefined&quot;</span><br><span class="line">    var foo = function()&#123;</span><br><span class="line">        console.log(2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是直接定义的话就不会为 undefined。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">    console.log(foo);</span><br><span class="line">    function foo()&#123;</span><br><span class="line">        console.log(&quot;this is ain&apos;t a function for the broken-hearted.&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>附上两道据说2014年阿狸笔试题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var v = &quot;Hello world&quot;;  </span><br><span class="line">(function() &#123;  </span><br><span class="line">    console.log(v);  </span><br><span class="line">    var v = &quot;I love you&quot;;  </span><br><span class="line">    bar();  </span><br><span class="line">    foo();  </span><br><span class="line">    function bar()&#123;  </span><br><span class="line">        console.log(&quot;this is bar!&quot;);  </span><br><span class="line">    &#125;  </span><br><span class="line">       </span><br><span class="line">    var foo = function() &#123;  </span><br><span class="line">        console.log(&quot;this is foo!&quot;);  </span><br><span class="line">    &#125;;  </span><br><span class="line">           </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line">// Result:  undefined; &quot;this is bar!&quot;; foo is not a function</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function bar() &#123;  </span><br><span class="line">    return foo;  </span><br><span class="line">    foo = 10;  </span><br><span class="line">    function foo() &#123;&#125;  </span><br><span class="line">    var foo = 11;  </span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">alert(typeof bar());</span><br><span class="line"></span><br><span class="line">// Result:  &quot;function&quot;</span><br></pre></td></tr></table></figure></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/project/"
+              target="_self"
+              >
+              项目
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
