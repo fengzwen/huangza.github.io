@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-20T16:09:34.384Z</updated>
+  <updated>2016-08-22T15:51:58.224Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>状态码</title>
+    <link href="http://yoursite.com/2016/08/22/statuscode/"/>
+    <id>http://yoursite.com/2016/08/22/statuscode/</id>
+    <published>2016-08-22T15:50:15.000Z</published>
+    <updated>2016-08-22T15:51:58.224Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;状态码&quot;&gt;&lt;a href=&quot;#状态码&quot; class=&quot;headerlink&quot; title=&quot;状态码&quot;&gt;&lt;/a&gt;状态码&lt;/h1&gt;&lt;p&gt;100-199 用于指定客户端应相应的某些动作。&lt;br&gt;200-299 用于表示请求成功。&lt;br&gt;300-399 用于已经移动的文件并且常被包含在定位头信息中指定新的地址信息。&lt;br&gt;400-499 用于指出客户端的错误。&lt;br&gt;500-599 用于支持服务器错误。&lt;br&gt;常见的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;200：一般用于相应GET和POST请求。这个状态码对servlet是缺省的；如果没有调用setStatus方法的话，就会得到200。&lt;/li&gt;
+&lt;li&gt;302：指所请求的文档在别的地方；文档新的URL会在定位响应头信息中给出。浏览器会自动连接到新的URL。 只是定位头信息中所给的URL应被理解为临时交换地址而不是永久的。&lt;/li&gt;
+&lt;li&gt;404：请求失败，请求所希望得到的资源未被在服务器上发现。没有信息能够告诉用户这个状况到底是暂时的还是永久的。假如服务器知道情况的话，应当使用410状态码来告知旧资源因为某些内部的配置机制问题，已经永久的不可用，而且没有任何可以跳转的地址。404这个状态码被广泛应用于当服务器不想揭示到底为何请求被拒绝或者没有其他适合的响应可用的情况下。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;状态码&quot;&gt;&lt;a href=&quot;#状态码&quot; class=&quot;headerlink&quot; title=&quot;状态码&quot;&gt;&lt;/a&gt;状态码&lt;/h1&gt;&lt;p&gt;100-199 用于指定客户端应相应的某些动作。&lt;br&gt;200-299 用于表示请求成功。&lt;br&gt;300-399 用于已经移动的文件
+    
+    </summary>
+    
+    
+      <category term="HTTP" scheme="http://yoursite.com/tags/HTTP/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript 变量声明提升</title>
