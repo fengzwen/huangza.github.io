@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-22T15:51:58.224Z</updated>
+  <updated>2016-08-23T15:49:31.757Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue学习笔记（一） - 概述</title>
+    <link href="http://yoursite.com/2016/08/23/vue-brief-introduction/"/>
+    <id>http://yoursite.com/2016/08/23/vue-brief-introduction/</id>
+    <published>2016-08-23T15:39:31.000Z</published>
+    <updated>2016-08-23T15:49:31.757Z</updated>
+    
+    <content type="html">&lt;p&gt;Vue.js 的组件系统，其实就是一个&lt;strong&gt;组件树&lt;/strong&gt;——以独立可复用的小组件来构建大型应用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/source/images/vue.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Vue.js 的组件系统，其实就是一个&lt;strong&gt;组件树&lt;/strong&gt;——以独立可复用的小组件来构建大型应用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/source/images/vue.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="Vue.js" scheme="http://yoursite.com/tags/Vue-js/"/>
+    
+      <category term="MVVM" scheme="http://yoursite.com/tags/MVVM/"/>
+    
+  </entry>
   
   <entry>
     <title>状态码</title>
