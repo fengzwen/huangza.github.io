@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/08/24/vue-instance/</loc>
+    
+    <lastmod>2016-08-24T15:33:41.509Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/23/vue-brief-introduction/</loc>
     
-    <lastmod>2016-08-23T15:49:31.757Z</lastmod>
+    <lastmod>2016-08-24T15:33:25.879Z</lastmod>
     
   </url>
   

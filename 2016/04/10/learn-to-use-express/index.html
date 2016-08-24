@@ -15,22 +15,16 @@
     <meta name="keywords" content="JavaScript,Node.js," />
   
 
-  <meta name="description" content="前(che)言(dan)由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。
-Express 实现的功能
-为 http 模块提供了更高层的接口，而不用直接使用 Node.js 的 http 模块提供的">
+  <meta name="description" content="&amp;#x524D;(che)&amp;#x8A00;(dan)&amp;#x7531;&amp;#x4E8E;&amp;#x6BD5;&amp;#x4E1A;&amp;#x8BBE;&amp;#x8BA1;&amp;#x60F3;&amp;#x5C1D;&amp;#x8BD5;&amp;#x7740;&amp;#x4F7F;&amp;#x7528; Node.js &amp;#x6765;&amp;#x505A;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x56E0;&amp;#x6B">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Express 框架来开发 Node.js 应用">
 <meta property="og:url" content="http://yoursite.com/2016/04/10/learn-to-use-express/index.html">
 <meta property="og:site_name" content="Andre Huang">
-<meta property="og:description" content="前(che)言(dan)由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。
-Express 实现的功能
-为 http 模块提供了更高层的接口，而不用直接使用 Node.js 的 http 模块提供的">
+<meta property="og:description" content="&amp;#x524D;(che)&amp;#x8A00;(dan)&amp;#x7531;&amp;#x4E8E;&amp;#x6BD5;&amp;#x4E1A;&amp;#x8BBE;&amp;#x8BA1;&amp;#x60F3;&amp;#x5C1D;&amp;#x8BD5;&amp;#x7740;&amp;#x4F7F;&amp;#x7528; Node.js &amp;#x6765;&amp;#x505A;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x56E0;&amp;#x6B">
 <meta property="og:updated_time" content="2016-04-21T09:39:45.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Express 框架来开发 Node.js 应用">
-<meta name="twitter:description" content="前(che)言(dan)由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。
-Express 实现的功能
-为 http 模块提供了更高层的接口，而不用直接使用 Node.js 的 http 模块提供的">
+<meta name="twitter:description" content="&amp;#x524D;(che)&amp;#x8A00;(dan)&amp;#x7531;&amp;#x4E8E;&amp;#x6BD5;&amp;#x4E1A;&amp;#x8BBE;&amp;#x8BA1;&amp;#x60F3;&amp;#x5C1D;&amp;#x8BD5;&amp;#x7740;&amp;#x4F7F;&amp;#x7528; Node.js &amp;#x6765;&amp;#x505A;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x56E0;&amp;#x6B">
 
   
 
@@ -168,42 +162,42 @@ Express 实现的功能
 
   <div class="article-content">
     
-      <h1 id="前-che-言-dan"><a href="#前-che-言-dan" class="headerlink" title="前(che)言(dan)"></a>前(che)言(dan)</h1><p>由于毕业设计想尝试着使用 Node.js 来做一个应用，因此便接触了 Express 这个已有的 Web 开发框架。<br>有了 Express 这个框架，就可以省去自己手动实现小到一个 POST 请求，大到 Cookie、会话的管理的精力，避免了重复造轮子。</p>
-<h1 id="Express-实现的功能"><a href="#Express-实现的功能" class="headerlink" title="Express 实现的功能"></a>Express 实现的功能</h1><ul>
-<li>为 http 模块提供了更高层的接口，而不用直接使用 Node.js 的 http 模块提供的底层接口</li>
-<li>路由控制</li>
-<li>模版解析支持</li>
-<li>动态视图</li>
-<li>用户会话</li>
-<li>CSRF 保护</li>
-<li>静态文件服务</li>
-<li>错误控制器</li>
-<li>访问日志</li>
-<li>缓存</li>
-<li>插件支持</li>
+      <h1 id="&#x524D;-che-&#x8A00;-dan"><a href="#&#x524D;-che-&#x8A00;-dan" class="headerlink" title="&#x524D;(che)&#x8A00;(dan)"></a>&#x524D;(che)&#x8A00;(dan)</h1><p>&#x7531;&#x4E8E;&#x6BD5;&#x4E1A;&#x8BBE;&#x8BA1;&#x60F3;&#x5C1D;&#x8BD5;&#x7740;&#x4F7F;&#x7528; Node.js &#x6765;&#x505A;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#xFF0C;&#x56E0;&#x6B64;&#x4FBF;&#x63A5;&#x89E6;&#x4E86; Express &#x8FD9;&#x4E2A;&#x5DF2;&#x6709;&#x7684; Web &#x5F00;&#x53D1;&#x6846;&#x67B6;&#x3002;<br>&#x6709;&#x4E86; Express &#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7701;&#x53BB;&#x81EA;&#x5DF1;&#x624B;&#x52A8;&#x5B9E;&#x73B0;&#x5C0F;&#x5230;&#x4E00;&#x4E2A; POST &#x8BF7;&#x6C42;&#xFF0C;&#x5927;&#x5230; Cookie&#x3001;&#x4F1A;&#x8BDD;&#x7684;&#x7BA1;&#x7406;&#x7684;&#x7CBE;&#x529B;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x91CD;&#x590D;&#x9020;&#x8F6E;&#x5B50;&#x3002;</p>
+<h1 id="Express-&#x5B9E;&#x73B0;&#x7684;&#x529F;&#x80FD;"><a href="#Express-&#x5B9E;&#x73B0;&#x7684;&#x529F;&#x80FD;" class="headerlink" title="Express &#x5B9E;&#x73B0;&#x7684;&#x529F;&#x80FD;"></a>Express &#x5B9E;&#x73B0;&#x7684;&#x529F;&#x80FD;</h1><ul>
+<li>&#x4E3A; http &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x9AD8;&#x5C42;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x76F4;&#x63A5;&#x4F7F;&#x7528; Node.js &#x7684; http &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x7684;&#x5E95;&#x5C42;&#x63A5;&#x53E3;</li>
+<li>&#x8DEF;&#x7531;&#x63A7;&#x5236;</li>
+<li>&#x6A21;&#x7248;&#x89E3;&#x6790;&#x652F;&#x6301;</li>
+<li>&#x52A8;&#x6001;&#x89C6;&#x56FE;</li>
+<li>&#x7528;&#x6237;&#x4F1A;&#x8BDD;</li>
+<li>CSRF &#x4FDD;&#x62A4;</li>
+<li>&#x9759;&#x6001;&#x6587;&#x4EF6;&#x670D;&#x52A1;</li>
+<li>&#x9519;&#x8BEF;&#x63A7;&#x5236;&#x5668;</li>
+<li>&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;</li>
+<li>&#x7F13;&#x5B58;</li>
+<li>&#x63D2;&#x4EF6;&#x652F;&#x6301;</li>
 </ul>
-<h1 id="Express-工程的结构"><a href="#Express-工程的结构" class="headerlink" title="Express 工程的结构"></a>Express 工程的结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">|—— bin/</span><br><span class="line">|</span><br><span class="line">|—— node_modules/</span><br><span class="line">|</span><br><span class="line">|—— public/</span><br><span class="line">|	|</span><br><span class="line">|	|—— images/</span><br><span class="line">|	|—— javascripts/</span><br><span class="line">|	|—— stylesheets/</span><br><span class="line">|</span><br><span class="line">|—— routes/				为指定路径组织返回内容，相当于 MVC 架构中的控制器</span><br><span class="line">|	|</span><br><span class="line">|	|—— index.js			路由文件，相当于控制器，用于组织展示的内容</span><br><span class="line">|</span><br><span class="line">|—— views/</span><br><span class="line">|	|</span><br><span class="line">|	|—— index.jade		模版文件，当前为 routes/index.js 中调用的模版</span><br><span class="line">|</span><br><span class="line">|—— app.js				工程的入口</span><br><span class="line">|</span><br><span class="line">|—— package.json</span><br></pre></td></tr></table></figure>
-<h1 id="各文件说明"><a href="#各文件说明" class="headerlink" title="各文件说明"></a>各文件说明</h1><h2 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h2><p>app 对象一般情况下都是指向 Express 应用，通过调用 Express 模块的 express() 方法创建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var app = express();</span><br></pre></td></tr></table></figure></p>
-<p>app 对象配有一些成员方法：</p>
+<h1 id="Express-&#x5DE5;&#x7A0B;&#x7684;&#x7ED3;&#x6784;"><a href="#Express-&#x5DE5;&#x7A0B;&#x7684;&#x7ED3;&#x6784;" class="headerlink" title="Express &#x5DE5;&#x7A0B;&#x7684;&#x7ED3;&#x6784;"></a>Express &#x5DE5;&#x7A0B;&#x7684;&#x7ED3;&#x6784;</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">|&#x2014;&#x2014; bin/</span><br><span class="line">|</span><br><span class="line">|&#x2014;&#x2014; node_modules/</span><br><span class="line">|</span><br><span class="line">|&#x2014;&#x2014; public/</span><br><span class="line">|	|</span><br><span class="line">|	|&#x2014;&#x2014; images/</span><br><span class="line">|	|&#x2014;&#x2014; javascripts/</span><br><span class="line">|	|&#x2014;&#x2014; stylesheets/</span><br><span class="line">|</span><br><span class="line">|&#x2014;&#x2014; routes/				&#x4E3A;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x7EC4;&#x7EC7;&#x8FD4;&#x56DE;&#x5185;&#x5BB9;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; MVC &#x67B6;&#x6784;&#x4E2D;&#x7684;&#x63A7;&#x5236;&#x5668;</span><br><span class="line">|	|</span><br><span class="line">|	|&#x2014;&#x2014; index.js			&#x8DEF;&#x7531;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x7EC4;&#x7EC7;&#x5C55;&#x793A;&#x7684;&#x5185;&#x5BB9;</span><br><span class="line">|</span><br><span class="line">|&#x2014;&#x2014; views/</span><br><span class="line">|	|</span><br><span class="line">|	|&#x2014;&#x2014; index.jade		&#x6A21;&#x7248;&#x6587;&#x4EF6;&#xFF0C;&#x5F53;&#x524D;&#x4E3A; routes/index.js &#x4E2D;&#x8C03;&#x7528;&#x7684;&#x6A21;&#x7248;</span><br><span class="line">|</span><br><span class="line">|&#x2014;&#x2014; app.js				&#x5DE5;&#x7A0B;&#x7684;&#x5165;&#x53E3;</span><br><span class="line">|</span><br><span class="line">|&#x2014;&#x2014; package.json</span><br></pre></td></tr></table></figure>
+<h1 id="&#x5404;&#x6587;&#x4EF6;&#x8BF4;&#x660E;"><a href="#&#x5404;&#x6587;&#x4EF6;&#x8BF4;&#x660E;" class="headerlink" title="&#x5404;&#x6587;&#x4EF6;&#x8BF4;&#x660E;"></a>&#x5404;&#x6587;&#x4EF6;&#x8BF4;&#x660E;</h1><h2 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h2><p>app &#x5BF9;&#x8C61;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x662F;&#x6307;&#x5411; Express &#x5E94;&#x7528;&#xFF0C;&#x901A;&#x8FC7;&#x8C03;&#x7528; Express &#x6A21;&#x5757;&#x7684; express() &#x65B9;&#x6CD5;&#x521B;&#x5EFA;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var app = express();</span><br></pre></td></tr></table></figure></p>
+<p>app &#x5BF9;&#x8C61;&#x914D;&#x6709;&#x4E00;&#x4E9B;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#xFF1A;</p>
 <ul>
-<li>app.METHOD 和 app.param，用来处理路由 HTTP 请求</li>
-<li>app.route，用来配置中间件</li>
-<li>app.render，渲染 HTML 视图</li>
-<li>app.engine，注册模版引擎</li>
+<li>app.METHOD &#x548C; app.param&#xFF0C;&#x7528;&#x6765;&#x5904;&#x7406;&#x8DEF;&#x7531; HTTP &#x8BF7;&#x6C42;</li>
+<li>app.route&#xFF0C;&#x7528;&#x6765;&#x914D;&#x7F6E;&#x4E2D;&#x95F4;&#x4EF6;</li>
+<li>app.render&#xFF0C;&#x6E32;&#x67D3; HTML &#x89C6;&#x56FE;</li>
+<li>app.engine&#xFF0C;&#x6CE8;&#x518C;&#x6A21;&#x7248;&#x5F15;&#x64CE;</li>
 </ul>
-<p>app.set 是 Express 的参数设置工具，接受一个 key 和一个 value<br>可用的参数有：</p>
+<p>app.set &#x662F; Express &#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x5DE5;&#x5177;&#xFF0C;&#x63A5;&#x53D7;&#x4E00;&#x4E2A; key &#x548C;&#x4E00;&#x4E2A; value<br>&#x53EF;&#x7528;&#x7684;&#x53C2;&#x6570;&#x6709;&#xFF1A;</p>
 <ul>
-<li>basepath：基础地址，通常用于 res.redirect() 跳转</li>
-<li>views：视图文件的目录，存放模版文件</li>
-<li>view engine：视图模版引擎</li>
-<li>view cache：启用视图缓存</li>
-<li>case sensitive route：路径区分大小写</li>
-<li>strict routing：严格路径，启用后不会忽略路径末尾的“/”</li>
-<li>jsonp callback：开启透明的 JSONP 支持<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.set(&apos;title&apos;,&apos;My Site&apos;);</span><br></pre></td></tr></table></figure>
+<li>basepath&#xFF1A;&#x57FA;&#x7840;&#x5730;&#x5740;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E; res.redirect() &#x8DF3;&#x8F6C;</li>
+<li>views&#xFF1A;&#x89C6;&#x56FE;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5B58;&#x653E;&#x6A21;&#x7248;&#x6587;&#x4EF6;</li>
+<li>view engine&#xFF1A;&#x89C6;&#x56FE;&#x6A21;&#x7248;&#x5F15;&#x64CE;</li>
+<li>view cache&#xFF1A;&#x542F;&#x7528;&#x89C6;&#x56FE;&#x7F13;&#x5B58;</li>
+<li>case sensitive route&#xFF1A;&#x8DEF;&#x5F84;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</li>
+<li>strict routing&#xFF1A;&#x4E25;&#x683C;&#x8DEF;&#x5F84;&#xFF0C;&#x542F;&#x7528;&#x540E;&#x4E0D;&#x4F1A;&#x5FFD;&#x7565;&#x8DEF;&#x5F84;&#x672B;&#x5C3E;&#x7684;&#x201C;/&#x201D;</li>
+<li>jsonp callback&#xFF1A;&#x5F00;&#x542F;&#x900F;&#x660E;&#x7684; JSONP &#x652F;&#x6301;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.set(&apos;title&apos;,&apos;My Site&apos;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>app.get 可以获取 setting 里 key 对应的 value<br>eg： app.get(‘/‘,routes.index); 是一个路由控制器，用户如果访问“/”路径，则由 routes.index 来控制</p>
-<p>app.use 用来启用大量的中间件<br>（在 Express3.X 时依赖于 Connect）<br>（而在4.X开始，除了 Static 其余则被分离成独立的模块，需要单独安装，使用 require 调用）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var morgan = require(&apos;morgan&apos;); //logger模块的这个新名字真是神奇</span><br><span class="line">var bodyParser = require(&apos;body-parser&apos;);</span><br><span class="line">var methodOverride = require(&apos;method-override&apos;);</span><br><span class="line"></span><br><span class="line">app.use(express.static(__dirname + &apos;/public&apos;));</span><br><span class="line">app.use(morgan(&apos;dev&apos;));</span><br><span class="line">app.use(bodyParser());</span><br><span class="line">app.use(methodOverride());</span><br></pre></td></tr></table></figure></p>
+<p>app.get &#x53EF;&#x4EE5;&#x83B7;&#x53D6; setting &#x91CC; key &#x5BF9;&#x5E94;&#x7684; value<br>eg&#xFF1A; app.get(&#x2018;/&#x2018;,routes.index); &#x662F;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x7528;&#x6237;&#x5982;&#x679C;&#x8BBF;&#x95EE;&#x201C;/&#x201D;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x7531; routes.index &#x6765;&#x63A7;&#x5236;</p>
+<p>app.use &#x7528;&#x6765;&#x542F;&#x7528;&#x5927;&#x91CF;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;<br>&#xFF08;&#x5728; Express3.X &#x65F6;&#x4F9D;&#x8D56;&#x4E8E; Connect&#xFF09;<br>&#xFF08;&#x800C;&#x5728;4.X&#x5F00;&#x59CB;&#xFF0C;&#x9664;&#x4E86; Static &#x5176;&#x4F59;&#x5219;&#x88AB;&#x5206;&#x79BB;&#x6210;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x9700;&#x8981;&#x5355;&#x72EC;&#x5B89;&#x88C5;&#xFF0C;&#x4F7F;&#x7528; require &#x8C03;&#x7528;&#xFF09;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var morgan = require(&apos;morgan&apos;); //logger&#x6A21;&#x5757;&#x7684;&#x8FD9;&#x4E2A;&#x65B0;&#x540D;&#x5B57;&#x771F;&#x662F;&#x795E;&#x5947;</span><br><span class="line">var bodyParser = require(&apos;body-parser&apos;);</span><br><span class="line">var methodOverride = require(&apos;method-override&apos;);</span><br><span class="line"></span><br><span class="line">app.use(express.static(__dirname + &apos;/public&apos;));</span><br><span class="line">app.use(morgan(&apos;dev&apos;));</span><br><span class="line">app.use(bodyParser());</span><br><span class="line">app.use(methodOverride());</span><br></pre></td></tr></table></figure></p>
 
     
   </div>

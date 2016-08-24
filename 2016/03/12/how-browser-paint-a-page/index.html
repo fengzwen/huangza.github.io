@@ -15,37 +15,22 @@
     <meta name="keywords" content="性能优化," />
   
 
-  <meta name="description" content="浏览器渲染过程
-获取 HTML、css、js文件
-将HTML代码形成DOM Tree，解析样式为 CSSOM Tree
-合并 DOM 和 CSSOM，去除不可见元素以及设置了display:none属性的元素，构建 render tree
-对 render tree 的每个元素，其实也是 DOM 元素，计算其形状和位置，进行布局
-将每个节点元素转化为实际像素绘制在视口上，也称“栅格化”
-
-p.s.">
+  <meta name="description" content="&amp;#x6D4F;&amp;#x89C8;&amp;#x5668;&amp;#x6E32;&amp;#x67D3;&amp;#x8FC7;&amp;#x7A0B;
+&amp;#x83B7;&amp;#x53D6; HTML&amp;#x3001;css&amp;#x3001;js&amp;#x6587;&amp;#x4EF6;
+&amp;#x5C06;HTML&amp;#x4EE3;&amp;#x7801;&amp;#x5F62;&amp;#x6210;DOM Tree&amp;#xFF0C;&amp;#x89E3;&amp;#x6790;&amp;#x6837;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器渲染页面">
 <meta property="og:url" content="http://yoursite.com/2016/03/12/how-browser-paint-a-page/index.html">
 <meta property="og:site_name" content="Andre Huang">
-<meta property="og:description" content="浏览器渲染过程
-获取 HTML、css、js文件
-将HTML代码形成DOM Tree，解析样式为 CSSOM Tree
-合并 DOM 和 CSSOM，去除不可见元素以及设置了display:none属性的元素，构建 render tree
-对 render tree 的每个元素，其实也是 DOM 元素，计算其形状和位置，进行布局
-将每个节点元素转化为实际像素绘制在视口上，也称“栅格化”
-
-p.s.">
+<meta property="og:description" content="&amp;#x6D4F;&amp;#x89C8;&amp;#x5668;&amp;#x6E32;&amp;#x67D3;&amp;#x8FC7;&amp;#x7A0B;
+&amp;#x83B7;&amp;#x53D6; HTML&amp;#x3001;css&amp;#x3001;js&amp;#x6587;&amp;#x4EF6;
+&amp;#x5C06;HTML&amp;#x4EE3;&amp;#x7801;&amp;#x5F62;&amp;#x6210;DOM Tree&amp;#xFF0C;&amp;#x89E3;&amp;#x6790;&amp;#x6837;">
 <meta property="og:updated_time" content="2016-03-13T03:04:42.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器渲染页面">
-<meta name="twitter:description" content="浏览器渲染过程
-获取 HTML、css、js文件
-将HTML代码形成DOM Tree，解析样式为 CSSOM Tree
-合并 DOM 和 CSSOM，去除不可见元素以及设置了display:none属性的元素，构建 render tree
-对 render tree 的每个元素，其实也是 DOM 元素，计算其形状和位置，进行布局
-将每个节点元素转化为实际像素绘制在视口上，也称“栅格化”
-
-p.s.">
+<meta name="twitter:description" content="&amp;#x6D4F;&amp;#x89C8;&amp;#x5668;&amp;#x6E32;&amp;#x67D3;&amp;#x8FC7;&amp;#x7A0B;
+&amp;#x83B7;&amp;#x53D6; HTML&amp;#x3001;css&amp;#x3001;js&amp;#x6587;&amp;#x4EF6;
+&amp;#x5C06;HTML&amp;#x4EE3;&amp;#x7801;&amp;#x5F62;&amp;#x6210;DOM Tree&amp;#xFF0C;&amp;#x89E3;&amp;#x6790;&amp;#x6837;">
 
   
 
@@ -183,25 +168,25 @@ p.s.">
 
   <div class="article-content">
     
-      <h1 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h1><ol>
-<li>获取 HTML、css、js文件</li>
-<li>将HTML代码形成<strong>DOM Tree</strong>，解析样式为 <strong>CSSOM Tree</strong></li>
-<li>合并 DOM 和 CSSOM，去除<em>不可见元素</em>以及设置了<em>display:none</em>属性的元素，<strong>构建 render tree</strong></li>
-<li>对 render tree 的每个元素，其实也是 DOM 元素，计算其形状和位置，进行<strong>布局</strong></li>
-<li>将每个节点元素转化为实际像素<strong>绘制</strong>在视口上，也称“<strong>栅格化</strong>”</li>
+      <h1 id="&#x6D4F;&#x89C8;&#x5668;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;"><a href="#&#x6D4F;&#x89C8;&#x5668;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;" class="headerlink" title="&#x6D4F;&#x89C8;&#x5668;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;"></a>&#x6D4F;&#x89C8;&#x5668;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;</h1><ol>
+<li>&#x83B7;&#x53D6; HTML&#x3001;css&#x3001;js&#x6587;&#x4EF6;</li>
+<li>&#x5C06;HTML&#x4EE3;&#x7801;&#x5F62;&#x6210;<strong>DOM Tree</strong>&#xFF0C;&#x89E3;&#x6790;&#x6837;&#x5F0F;&#x4E3A; <strong>CSSOM Tree</strong></li>
+<li>&#x5408;&#x5E76; DOM &#x548C; CSSOM&#xFF0C;&#x53BB;&#x9664;<em>&#x4E0D;&#x53EF;&#x89C1;&#x5143;&#x7D20;</em>&#x4EE5;&#x53CA;&#x8BBE;&#x7F6E;&#x4E86;<em>display:none</em>&#x5C5E;&#x6027;&#x7684;&#x5143;&#x7D20;&#xFF0C;<strong>&#x6784;&#x5EFA; render tree</strong></li>
+<li>&#x5BF9; render tree &#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x662F; DOM &#x5143;&#x7D20;&#xFF0C;&#x8BA1;&#x7B97;&#x5176;&#x5F62;&#x72B6;&#x548C;&#x4F4D;&#x7F6E;&#xFF0C;&#x8FDB;&#x884C;<strong>&#x5E03;&#x5C40;</strong></li>
+<li>&#x5C06;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x5143;&#x7D20;&#x8F6C;&#x5316;&#x4E3A;&#x5B9E;&#x9645;&#x50CF;&#x7D20;<strong>&#x7ED8;&#x5236;</strong>&#x5728;&#x89C6;&#x53E3;&#x4E0A;&#xFF0C;&#x4E5F;&#x79F0;&#x201C;<strong>&#x6805;&#x683C;&#x5316;</strong>&#x201D;</li>
 </ol>
 <p><strong>p.s.</strong></p>
-<p>不可见元素：&lt;html&gt;、&lt;head&gt;、&lt;meta&gt;、&lt;link&gt;、&lt;style&gt;、&lt;script&gt;等</p>
-<p>render tree（渲染树）：在 Webkit 中这些对象被称为渲染器或渲染对象，而在 Gecko 中称之为“frame”。在渲染树中，每一段文本字符串都表现为独立的渲染器。每一个渲染对象都包含与之对应的 DOM 对象，或者文本块，还加上计算过的样式。换言之，渲染树是一个文档对象模型的直观展示。</p>
-<h2 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当render tree中元素的某些属性需要更新，而这些元素只影响外观、风格，不影响元素在网页中的位置（如：background-color、border-color、visibility等），浏览器就会重新构造样式，也就是<strong>重绘</strong></p>
-<h2 id="重排"><a href="#重排" class="headerlink" title="重排"></a>重排</h2><ol>
-<li>DOM 操作（元素添加，删除，修改，或者元素顺序的改变）</li>
-<li>内容变化，包括表单域内的文本改变</li>
-<li>CSS 属性的计算或改变</li>
-<li>添加或删除样式表</li>
-<li>更改“类”的属性</li>
-<li>浏览器窗口的操作（缩放，滚动）</li>
-<li>伪类激活（:hover）</li>
+<p>&#x4E0D;&#x53EF;&#x89C1;&#x5143;&#x7D20;&#xFF1A;&lt;html&gt;&#x3001;&lt;head&gt;&#x3001;&lt;meta&gt;&#x3001;&lt;link&gt;&#x3001;&lt;style&gt;&#x3001;&lt;script&gt;&#x7B49;</p>
+<p>render tree&#xFF08;&#x6E32;&#x67D3;&#x6811;&#xFF09;&#xFF1A;&#x5728; Webkit &#x4E2D;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x88AB;&#x79F0;&#x4E3A;&#x6E32;&#x67D3;&#x5668;&#x6216;&#x6E32;&#x67D3;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x5728; Gecko &#x4E2D;&#x79F0;&#x4E4B;&#x4E3A;&#x201C;frame&#x201D;&#x3002;&#x5728;&#x6E32;&#x67D3;&#x6811;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x6BB5;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x8868;&#x73B0;&#x4E3A;&#x72EC;&#x7ACB;&#x7684;&#x6E32;&#x67D3;&#x5668;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x6E32;&#x67D3;&#x5BF9;&#x8C61;&#x90FD;&#x5305;&#x542B;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684; DOM &#x5BF9;&#x8C61;&#xFF0C;&#x6216;&#x8005;&#x6587;&#x672C;&#x5757;&#xFF0C;&#x8FD8;&#x52A0;&#x4E0A;&#x8BA1;&#x7B97;&#x8FC7;&#x7684;&#x6837;&#x5F0F;&#x3002;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x6E32;&#x67D3;&#x6811;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#x7684;&#x76F4;&#x89C2;&#x5C55;&#x793A;&#x3002;</p>
+<h2 id="&#x91CD;&#x7ED8;"><a href="#&#x91CD;&#x7ED8;" class="headerlink" title="&#x91CD;&#x7ED8;"></a>&#x91CD;&#x7ED8;</h2><p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x5F53;render tree&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x67D0;&#x4E9B;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x66F4;&#x65B0;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x53EA;&#x5F71;&#x54CD;&#x5916;&#x89C2;&#x3001;&#x98CE;&#x683C;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x5143;&#x7D20;&#x5728;&#x7F51;&#x9875;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x5982;&#xFF1A;background-color&#x3001;border-color&#x3001;visibility&#x7B49;&#xFF09;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x6784;&#x9020;&#x6837;&#x5F0F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<strong>&#x91CD;&#x7ED8;</strong></p>
+<h2 id="&#x91CD;&#x6392;"><a href="#&#x91CD;&#x6392;" class="headerlink" title="&#x91CD;&#x6392;"></a>&#x91CD;&#x6392;</h2><ol>
+<li>DOM &#x64CD;&#x4F5C;&#xFF08;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x4FEE;&#x6539;&#xFF0C;&#x6216;&#x8005;&#x5143;&#x7D20;&#x987A;&#x5E8F;&#x7684;&#x6539;&#x53D8;&#xFF09;</li>
+<li>&#x5185;&#x5BB9;&#x53D8;&#x5316;&#xFF0C;&#x5305;&#x62EC;&#x8868;&#x5355;&#x57DF;&#x5185;&#x7684;&#x6587;&#x672C;&#x6539;&#x53D8;</li>
+<li>CSS &#x5C5E;&#x6027;&#x7684;&#x8BA1;&#x7B97;&#x6216;&#x6539;&#x53D8;</li>
+<li>&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x6837;&#x5F0F;&#x8868;</li>
+<li>&#x66F4;&#x6539;&#x201C;&#x7C7B;&#x201D;&#x7684;&#x5C5E;&#x6027;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x7F29;&#x653E;&#xFF0C;&#x6EDA;&#x52A8;&#xFF09;</li>
+<li>&#x4F2A;&#x7C7B;&#x6FC0;&#x6D3B;&#xFF08;:hover&#xFF09;</li>
 </ol>
 
     
