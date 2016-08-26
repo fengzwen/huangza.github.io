@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about-me/index.html</loc>
+    
+    <lastmod>2016-08-26T16:34:13.057Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/26/vue-data-binding/</loc>
     
-    <lastmod>2016-08-26T16:07:28.506Z</lastmod>
+    <lastmod>2016-08-26T16:18:31.746Z</lastmod>
     
   </url>
   
@@ -103,13 +110,6 @@
     <loc>http://yoursite.com/2016/03/31/create-a-blank-html-page/</loc>
     
     <lastmod>2016-03-30T16:48:47.050Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about-me/index.html</loc>
-    
-    <lastmod>2016-03-30T16:35:37.608Z</lastmod>
     
   </url>
   
