@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/08/30/vue-condition-paint/</loc>
+    
+    <lastmod>2016-08-30T15:53:46.382Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/29/vue-class-style-binding/</loc>
     
     <lastmod>2016-08-29T15:36:01.306Z</lastmod>
