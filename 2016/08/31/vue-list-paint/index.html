@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Vue学习笔记（六） - 列表渲染 | Andre Huang</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="JavaScript,Vue.js,MVVM," />
+  
+
+  <meta name="description" content="&amp;#x4E00;&amp;#x822C;&amp;#x5F62;&amp;#x5F0F;&amp;#x4F7F;&amp;#x7528; v-for &amp;#x6765;&amp;#x904D;&amp;#x5386;&amp;#x4E00;&amp;#x4E2A;&amp;#x6570;&amp;#x7EC4;&amp;#x6216;&amp;#x8005;&amp;#x5BF9;&amp;#x8C61;&amp;#x4EE5;&amp;#x6E32;&amp;#x67D3;&amp;#x4E00;&amp;#x4E2A;&amp;#x5217;&amp;#x8868;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习笔记（六） - 列表渲染">
+<meta property="og:url" content="http://yoursite.com/2016/08/31/vue-list-paint/index.html">
+<meta property="og:site_name" content="Andre Huang">
+<meta property="og:description" content="&amp;#x4E00;&amp;#x822C;&amp;#x5F62;&amp;#x5F0F;&amp;#x4F7F;&amp;#x7528; v-for &amp;#x6765;&amp;#x904D;&amp;#x5386;&amp;#x4E00;&amp;#x4E2A;&amp;#x6570;&amp;#x7EC4;&amp;#x6216;&amp;#x8005;&amp;#x5BF9;&amp;#x8C61;&amp;#x4EE5;&amp;#x6E32;&amp;#x67D3;&amp;#x4E00;&amp;#x4E2A;&amp;#x5217;&amp;#x8868;&amp;">
+<meta property="og:updated_time" content="2016-08-31T15:56:02.135Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue学习笔记（六） - 列表渲染">
+<meta name="twitter:description" content="&amp;#x4E00;&amp;#x822C;&amp;#x5F62;&amp;#x5F0F;&amp;#x4F7F;&amp;#x7528; v-for &amp;#x6765;&amp;#x904D;&amp;#x5386;&amp;#x4E00;&amp;#x4E2A;&amp;#x6570;&amp;#x7EC4;&amp;#x6216;&amp;#x8005;&amp;#x5BF9;&amp;#x8C61;&amp;#x4EE5;&amp;#x6E32;&amp;#x67D3;&amp;#x4E00;&amp;#x4E2A;&amp;#x5217;&amp;#x8868;&amp;">
+
+  
+
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">入口</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">入口</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/project/"
+            target="_self"
+            >
+            项目
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一般形式"><span class="toc-text">一般形式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模版-template-v-for"><span class="toc-text">模版 template v-for</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数组变动检测"><span class="toc-text">数组变动检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#变异方法"><span class="toc-text">变异方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换数组"><span class="toc-text">替换数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#track-by"><span class="toc-text">track by</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#track-by-index"><span class="toc-text">track by $index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#对象-v-for"><span class="toc-text">对象 v-for</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#值域-v-for"><span class="toc-text">值域 v-for</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#过滤-排序"><span class="toc-text">过滤/排序</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-vue-list-paint" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Vue学习笔记（六） - 列表渲染</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.08.31</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Andre Huang</span>
+        </span>
+      
+
+      
+
+
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="&#x4E00;&#x822C;&#x5F62;&#x5F0F;"><a href="#&#x4E00;&#x822C;&#x5F62;&#x5F0F;" class="headerlink" title="&#x4E00;&#x822C;&#x5F62;&#x5F0F;"></a>&#x4E00;&#x822C;&#x5F62;&#x5F0F;</h1><p>&#x4F7F;&#x7528; v-for &#x6765;&#x904D;&#x5386;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x4EE5;&#x6E32;&#x67D3;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x3002;<br>&#x5F62;&#x5F0F;&#xFF1A;    item in items<br>&#x89E3;&#x91CA;&#xFF1A;    item - &#x5143;&#x7D20;&#x7684;&#x522B;&#x540D;    items - &#x6570;&#x7EC4;/&#x5BF9;&#x8C61;<br>&#x5176;&#x4E2D;&#xFF0C;Vuejs &#x8FD8;&#x7ED9;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x53D8;&#x91CF; $index&#xFF0C;&#x4E3A;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;example&quot;&gt;</span><br><span class="line">	&lt;li v-for=&quot;item in items&quot;&gt;</span><br><span class="line">		{{ parentMessage }} - {{ $index }} - {{ item.message }}</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var example = new Vue({</span><br><span class="line">	el: &apos;#example&apos;,</span><br><span class="line">	data: {</span><br><span class="line">		parentMessage: &apos;Parent&apos;,</span><br><span class="line">		item: [</span><br><span class="line">			{ message: &apos;Foo&apos; },</span><br><span class="line">			{ message: &apos;Bar&apos; }</span><br><span class="line">		]</span><br><span class="line">	}</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x4E3A;&#x7D22;&#x5F15;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=&quot;(index, item) in items&quot;&gt;</span><br><span class="line">{{ index }} {{ item.message }}</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Addition:    1.0.17 &#x5F00;&#x59CB;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; v-for=&#x201D;item of items&#x201D;</p>
+<h1 id="&#x6A21;&#x7248;-template-v-for"><a href="#&#x6A21;&#x7248;-template-v-for" class="headerlink" title="&#x6A21;&#x7248; template v-for"></a>&#x6A21;&#x7248; template v-for</h1><p>&#x7ED3;&#x5408; template &#x6807;&#x7B7E;&#x4F5C;&#x4E3A;&#x5305;&#x88F9;&#x5757;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6E32;&#x67D3;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x6A21;&#x7248;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;template v-for=&quot;item in items&quot;&gt;</span><br><span class="line">		&lt;li&gt; {{ item.text }} &lt;/li&gt;</span><br><span class="line">		&lt;li class=&quot;divider&quot;&gt; &lt;/li&gt;</span><br><span class="line">	&lt;/template&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="&#x6570;&#x7EC4;&#x53D8;&#x52A8;&#x68C0;&#x6D4B;"><a href="#&#x6570;&#x7EC4;&#x53D8;&#x52A8;&#x68C0;&#x6D4B;" class="headerlink" title="&#x6570;&#x7EC4;&#x53D8;&#x52A8;&#x68C0;&#x6D4B;"></a>&#x6570;&#x7EC4;&#x53D8;&#x52A8;&#x68C0;&#x6D4B;</h1><h2 id="&#x53D8;&#x5F02;&#x65B9;&#x6CD5;"><a href="#&#x53D8;&#x5F02;&#x65B9;&#x6CD5;" class="headerlink" title="&#x53D8;&#x5F02;&#x65B9;&#x6CD5;"></a>&#x53D8;&#x5F02;&#x65B9;&#x6CD5;</h2><p>&#x6240;&#x8C13;&#x201C;&#x53D8;&#x5F02;&#x65B9;&#x6CD5;&#x201D;&#xFF08;&#x540D;&#x79F0;&#x6765;&#x81EA; Vue.js &#x7684;&#x4E2D;&#x6587; API&#xFF09;&#xFF0C;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x539F;&#x59CB;&#x7684;&#x6570;&#x7EC4;&#x4F1A;&#x4EA7;&#x751F;&#x53D8;&#x5316;&#x3002;<br>Vue.js &#x5BF9;&#x88AB;&#x89C2;&#x5BDF;&#x6570;&#x7EC4;&#x7684;&#x8FD9;&#x4E9B;&#x53D8;&#x5F02;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4E86;&#x52A0;&#x5DE5;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x65F6;&#x53EF;&#x4EE5;&#x89E6;&#x53D1;&#x89C6;&#x56FE;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>push()</li>
+<li>pop()</li>
+<li>shift()</li>
+<li>unshift()</li>
+<li>splice()</li>
+<li>sort()</li>
+<li>reverse()<br>( sort &#x5728; Chrome &#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x66F4;&#x65B0;&#xFF0C;&#x706B;&#x72D0;&#x53EF;&#x4EE5;&#xFF09;</li>
+</ul>
+<h2 id="&#x66FF;&#x6362;&#x6570;&#x7EC4;"><a href="#&#x66FF;&#x6362;&#x6570;&#x7EC4;" class="headerlink" title="&#x66FF;&#x6362;&#x6570;&#x7EC4;"></a>&#x66FF;&#x6362;&#x6570;&#x7EC4;</h2><p>&#x4F7F;&#x7528;&#x65B0;&#x6570;&#x7EC4;&#x66FF;&#x6362;&#x65E7;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x89E6;&#x53D1;&#x89C6;&#x56FE;&#x7684;&#x66F4;&#x65B0;&#x3002;<br>Vue.js &#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E9B;&#x542F;&#x53D1;&#x7B97;&#x6CD5;&#xFF0C;&#x6700;&#x5927;&#x5316;&#x5730;&#x590D;&#x7528; DOM &#x5143;&#x7D20;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x5FC5;&#x62C5;&#x5FC3;&#x66FF;&#x6362;&#x6570;&#x7EC4;&#x4F1A;&#x56E0;&#x4E3A;&#x91CD;&#x65B0;&#x6E32;&#x67D3; DOM &#x800C;&#x5E26;&#x6765;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;<br>&#xFF08;&#x5217;&#x8868;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x539F;&#x7406;&#xFF0C;<a href="http://gold.xitu.io/entry/5776187cd342d30058d50fd2&#xFF09;" target="_blank" rel="external">http://gold.xitu.io/entry/5776187cd342d30058d50fd2&#xFF09;</a></p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x539F;&#x59CB;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x83B7;&#x5F97;&#x7684;&#x65B0;&#x6570;&#x7EC4;&#x6765;&#x66FF;&#x6362;&#x65E7;&#x6570;&#x7EC4;&#x3002;</p>
+<h2 id="track-by"><a href="#track-by" class="headerlink" title="track by"></a>track by</h2><p>&#x7ED1;&#x5B9A;&#x4E00;&#x4E2A;&#x4F5C;&#x4E3A;&#x552F;&#x4E00; ID &#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x4F7F; Vue.js &#x5C3D;&#x53EF;&#x80FD;&#x5730;&#x590D;&#x7528;&#x5DF2;&#x6709;&#x5B9E;&#x4F8B;&#x3002;</p>
+<h2 id="track-by-index"><a href="#track-by-index" class="headerlink" title="track by $index"></a>track by $index</h2><h2 id="&#x95EE;&#x9898;"><a href="#&#x95EE;&#x9898;" class="headerlink" title="&#x95EE;&#x9898;"></a>&#x95EE;&#x9898;</h2><p>&#x201C;&#x56E0;&#x4E3A; JavaScript &#x7684;&#x9650;&#x5236;&#xFF0C;Vue.js &#x4E0D;&#x80FD;&#x68C0;&#x6D4B;&#x5230;&#x4E0B;&#x9762;&#x6570;&#x7EC4;&#x53D8;&#x5316;&#xFF1A;&#x201D;(WHY?- -)</p>
+<ol>
+<li>&#x76F4;&#x63A5;&#x7528;&#x7D22;&#x5F15;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#xFF0C;    &#x5982;&#xFF1A; vm.items[0] = {};</li>
+<li>&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;&#x957F;&#x5EA6;&#xFF0C;    &#x5982;&#xFF1A; vm.items.length = 0;</li>
+</ol>
+<p>To solve Q1&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Vue.js &#x6570;&#x7EC4;&#x7684; $set() &#x65B9;&#x6CD5;&#xFF1A;<br>example.items.$set( key, data )<br>key - &#x952E;&#x503C;&#x6216;&#x8005;&#x7D22;&#x5F15;<br>data - &#x8981;&#x8D4B;&#x4E88;&#x5176;&#x7684;&#x6570;&#x636E;</p>
+<p>To solve Q2&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x6570;&#x7EC4;&#x6765;&#x66FF;&#x6362; items</p>
+<h1 id="&#x5BF9;&#x8C61;-v-for"><a href="#&#x5BF9;&#x8C61;-v-for" class="headerlink" title="&#x5BF9;&#x8C61; v-for"></a>&#x5BF9;&#x8C61; v-for</h1><p>&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230; $index&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230; $key</p>
+<h1 id="&#x503C;&#x57DF;-v-for"><a href="#&#x503C;&#x57DF;-v-for" class="headerlink" title="&#x503C;&#x57DF; v-for"></a>&#x503C;&#x57DF; v-for</h1><p>v-for &#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x8F93;&#x51FA;&#x8303;&#x56F4;&#x5185;&#x7684;&#x6240;&#x6709;&#x6574;&#x6570;</p>
+<h1 id="&#x8FC7;&#x6EE4;-&#x6392;&#x5E8F;"><a href="#&#x8FC7;&#x6EE4;-&#x6392;&#x5E8F;" class="headerlink" title="&#x8FC7;&#x6EE4;/&#x6392;&#x5E8F;"></a>&#x8FC7;&#x6EE4;/&#x6392;&#x5E8F;</h1><p>&#x65B9;&#x6CD5;&#xFF1A;<br>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF0C;&#x8FD4;&#x56DE;&#x8FC7;&#x6EE4;/&#x6392;&#x5E8F;&#x8FC7;&#x7684;&#x6570;&#x7EC4;<br>&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;&#x8FC7;&#x6EE4;&#x5668; filterBy &#x548C; orderBy</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/project/"
+              target="_self"
+              >
+              项目
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
