@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-06T15:44:09.521Z</updated>
+  <updated>2016-09-07T14:56:56.264Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="http://yoursite.com/2016/09/06/jquery-pagination/"/>
     <id>http://yoursite.com/2016/09/06/jquery-pagination/</id>
     <published>2016-09-06T15:39:23.000Z</published>
-    <updated>2016-09-06T15:44:09.521Z</updated>
+    <updated>2016-09-07T14:56:56.264Z</updated>
     
     <content type="html">&lt;h1 id=&quot;pagination&quot;&gt;&lt;a href=&quot;#pagination&quot; class=&quot;headerlink&quot; title=&quot;pagination&quot;&gt;&lt;/a&gt;pagination&lt;/h1&gt;&lt;h2 id=&quot;&amp;#x521D;&amp;#x59CB;&amp;#x5316;&amp;#x5206;&amp;#x9875;&amp;#x63D2;&amp;#x4EF6;&quot;&gt;&lt;a href=&quot;#&amp;#x521D;&amp;#x59CB;&amp;#x5316;&amp;#x5206;&amp;#x9875;&amp;#x63D2;&amp;#x4EF6;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x521D;&amp;#x59CB;&amp;#x5316;&amp;#x5206;&amp;#x9875;&amp;#x63D2;&amp;#x4EF6;&quot;&gt;&lt;/a&gt;&amp;#x521D;&amp;#x59CB;&amp;#x5316;&amp;#x5206;&amp;#x9875;&amp;#x63D2;&amp;#x4EF6;&lt;/h2&gt;&lt;p&gt;$(&amp;#x201C;#container&amp;#x201D;).pagination( max_entries, extraOptions );&lt;/p&gt;
 &lt;h2 id=&quot;&amp;#x53C2;&amp;#x6570;&amp;#x8BF4;&amp;#x660E;&quot;&gt;&lt;a href=&quot;#&amp;#x53C2;&amp;#x6570;&amp;#x8BF4;&amp;#x660E;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x53C2;&amp;#x6570;&amp;#x8BF4;&amp;#x660E;&quot;&gt;&lt;/a&gt;&amp;#x53C2;&amp;#x6570;&amp;#x8BF4;&amp;#x660E;&lt;/h2&gt;&lt;p&gt;max_entries &amp;#x4E3A;&amp;#x603B;&amp;#x7684;&amp;#x6761;&amp;#x76EE;&amp;#x6570;&lt;/p&gt;
 &lt;p&gt;extraOptions &amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x53EF;&amp;#x9009;&amp;#x7684;&amp;#x914D;&amp;#x7F6E;&amp;#x5BF9;&amp;#x8C61;&amp;#xFF0C;&amp;#x5177;&amp;#x4F53;&amp;#x53C2;&amp;#x6570;&amp;#x5982;&amp;#x4E0B;&amp;#xFF1A;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;item_per_page&lt;br&gt;&amp;#x6BCF;&amp;#x9875;&amp;#x663E;&amp;#x793A;&amp;#x7684;&amp;#x6761;&amp;#x76EE;&amp;#x6570;&amp;#xFF0C;&amp;#x53EF;&amp;#x9009;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;10&lt;/li&gt;
-&lt;li&gt;num_display_entries&lt;br&gt;&amp;#x8FDE;&amp;#x7EED;&amp;#x5206;&amp;#x9875;&amp;#x4E3B;&amp;#x4F53;&amp;#x90E8;&amp;#x5206;&amp;#x663E;&amp;#x793A;&amp;#x7684;&amp;#x5206;&amp;#x9875;&amp;#x6761;&amp;#x76EE;&amp;#x6570;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;10&lt;/li&gt;
+&lt;li&gt;num_display_entries&lt;br&gt;&amp;#x8FDE;&amp;#x7EED;&amp;#x5206;&amp;#x9875;&amp;#x4E3B;&amp;#x4F53;&amp;#x90E8;&amp;#x5206;&amp;#x663E;&amp;#x793A;&amp;#x7684;&amp;#x5206;&amp;#x9875;&amp;#x6761;&amp;#x76EE;&amp;#x6570;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;10&lt;br&gt;&amp;#x5F53;&amp;#x53D6;4&amp;#x65F6;&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/06/jquery-pagination/pagination-01.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&amp;#x53D6;6&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/06/jquery-pagination/pagination-02.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
 &lt;li&gt;current_page&lt;br&gt;&amp;#x5F53;&amp;#x524D;&amp;#x9009;&amp;#x4E2D;&amp;#x7684;&amp;#x9875;&amp;#x9762;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;0&amp;#xFF0C;&amp;#x5373;&amp;#x7B2C;1&amp;#x9875;&lt;/li&gt;
-&lt;li&gt;num_edge_entries&lt;br&gt;&amp;#x4E24;&amp;#x4FA7;&amp;#x663E;&amp;#x793A;&amp;#x7684;&amp;#x9996;&amp;#x5C3E;&amp;#x5206;&amp;#x9875;&amp;#x7684;&amp;#x6761;&amp;#x76EE;&amp;#x6570;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;0&lt;/li&gt;
+&lt;li&gt;num_edge_entries&lt;br&gt;&amp;#x4E24;&amp;#x4FA7;&amp;#x663E;&amp;#x793A;&amp;#x7684;&amp;#x9996;&amp;#x5C3E;&amp;#x5206;&amp;#x9875;&amp;#x7684;&amp;#x6761;&amp;#x76EE;&amp;#x6570;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;0&lt;br&gt;&amp;#x9ED8;&amp;#x8BA4;&amp;#x60C5;&amp;#x51B5;&amp;#x4E0B;&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/06/jquery-pagination/pagination-03.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&amp;#x8BBE;&amp;#x7F6E;&amp;#x4E3A;1&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/06/jquery-pagination/pagination-04.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&amp;#x8BBE;&amp;#x7F6E;&amp;#x4E3A;2&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/06/jquery-pagination/pagination-05.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
 &lt;li&gt;link_to&lt;br&gt;&amp;#x5206;&amp;#x9875;&amp;#x7684;&amp;#x94FE;&amp;#x63A5;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x201D;#&amp;#x201D;&lt;/li&gt;
 &lt;li&gt;prev_text&lt;br&gt;&amp;#x201C;&amp;#x4E0A;&amp;#x4E00;&amp;#x9875;&amp;#x201D;&amp;#x6309;&amp;#x94AE;&amp;#x4E0A;&amp;#x663E;&amp;#x793A;&amp;#x7684;&amp;#x6587;&amp;#x5B57;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x201D;Prev&amp;#x201D;&lt;/li&gt;
 &lt;li&gt;next_text&lt;br&gt;&amp;#x201C;&amp;#x4E0B;&amp;#x4E00;&amp;#x9875;&amp;#x201D;&amp;#x6309;&amp;#x94AE;&amp;#x4E0A;&amp;#x663E;&amp;#x793A;&amp;#x7684;&amp;#x6587;&amp;#x5B57;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x201D;Next&amp;#x201D;&lt;/li&gt;
