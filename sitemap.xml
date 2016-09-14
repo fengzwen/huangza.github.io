@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/03/13/type-examine/</loc>
+    
+    <lastmod>2016-09-14T15:51:45.274Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/12/notes-of-learning-stylus/</loc>
     
     <lastmod>2016-09-13T14:45:04.628Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>http://yoursite.com/2016/04/20/whether-angularjs-controller-need-be-divided/</loc>
     
     <lastmod>2016-04-20T15:22:10.570Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/03/13/type-examine/</loc>
-    
-    <lastmod>2016-04-11T14:20:12.864Z</lastmod>
     
   </url>
   
