@@ -7,24 +7,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>AngularJS 的 controller.js 要不要拆分 | Andre Huang</title>
+  <title>学习URL | Andre Huang</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="JavaScript,AngularJS," />
+    <meta name="keywords" content="Web,HTTP," />
   
 
-  <meta name="description" content="&amp;#xFF08;&amp;#x6458;&amp;#x81EA;&amp;#x77E5;&amp;#x4E4E;&amp;#xFF09;">
+  <meta name="description" content="&amp;#x7EC4;&amp;#x6210;
+schema://host[:port#]/path/&amp;#x2026;/[?query-string][#anchor]
+
+
+schema: &amp;#x534F;&amp;#x8BAE;&amp;#x3002;&amp;#x5305;&amp;#x62EC; http&amp;#x3001;https&amp;#x3001;ftp &amp;#x7B49;&amp;#x3002;
+host: HTTP &amp;#x670D;&amp;#x52A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AngularJS 的 controller.js 要不要拆分">
-<meta property="og:url" content="http://yoursite.com/2016/04/20/whether-angularjs-controller-need-be-divided/index.html">
+<meta property="og:title" content="学习URL">
+<meta property="og:url" content="http://yoursite.com/2016/09/19/learn-url/index.html">
 <meta property="og:site_name" content="Andre Huang">
-<meta property="og:description" content="&amp;#xFF08;&amp;#x6458;&amp;#x81EA;&amp;#x77E5;&amp;#x4E4E;&amp;#xFF09;">
-<meta property="og:updated_time" content="2016-04-20T15:22:10.570Z">
+<meta property="og:description" content="&amp;#x7EC4;&amp;#x6210;
+schema://host[:port#]/path/&amp;#x2026;/[?query-string][#anchor]
+
+
+schema: &amp;#x534F;&amp;#x8BAE;&amp;#x3002;&amp;#x5305;&amp;#x62EC; http&amp;#x3001;https&amp;#x3001;ftp &amp;#x7B49;&amp;#x3002;
+host: HTTP &amp;#x670D;&amp;#x52A">
+<meta property="og:updated_time" content="2016-09-19T15:28:15.985Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AngularJS 的 controller.js 要不要拆分">
-<meta name="twitter:description" content="&amp;#xFF08;&amp;#x6458;&amp;#x81EA;&amp;#x77E5;&amp;#x4E4E;&amp;#xFF09;">
+<meta name="twitter:title" content="学习URL">
+<meta name="twitter:description" content="&amp;#x7EC4;&amp;#x6210;
+schema://host[:port#]/path/&amp;#x2026;/[?query-string][#anchor]
+
+
+schema: &amp;#x534F;&amp;#x8BAE;&amp;#x3002;&amp;#x5305;&amp;#x62EC; http&amp;#x3001;https&amp;#x3001;ftp &amp;#x7B49;&amp;#x3002;
+host: HTTP &amp;#x670D;&amp;#x52A">
 
   
 
@@ -127,17 +142,22 @@
 </div>
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#组成"><span class="toc-text">组成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#某些场景"><span class="toc-text">某些场景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#提取搜索串-search-并转化为对象"><span class="toc-text">提取搜索串 search 并转化为对象</span></a></li></ol></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
-   <article id="post-whether-angularjs-controller-need-be-divided" class="article article-type-post" itemprop="blogPost">
+   <article id="post-learn-url" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">AngularJS 的 controller.js 要不要拆分</h1>
+    <h1 class="post-title">学习URL</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2016.04.20</span>
+        <span>2016.09.19</span>
       </span>
 
       
@@ -157,7 +177,18 @@
 
   <div class="article-content">
     
-      <p><strong>&#xFF08;&#x6458;&#x81EA;&#x77E5;&#x4E4E;&#xFF09;</strong></p>
+      <h1 id="&#x7EC4;&#x6210;"><a href="#&#x7EC4;&#x6210;" class="headerlink" title="&#x7EC4;&#x6210;"></a>&#x7EC4;&#x6210;</h1><blockquote>
+<p>schema://host[:port#]/path/&#x2026;/[?query-string][#anchor]</p>
+</blockquote>
+<ul>
+<li>schema: <strong>&#x534F;&#x8BAE;</strong>&#x3002;&#x5305;&#x62EC; http&#x3001;https&#x3001;ftp &#x7B49;&#x3002;</li>
+<li>host: HTTP &#x670D;&#x52A1;&#x5668;&#x7684; <strong>IP &#x5730;&#x5740;</strong>&#x6216;&#x8005;&#x662F;<strong>&#x57DF;&#x540D;</strong>&#x3002;</li>
+<li>port: <strong>&#x7AEF;&#x53E3;</strong>&#x3002;&#x53EF;&#x9009;&#x3002;</li>
+<li>path: &#x8BBF;&#x95EE;&#x7684;&#x8D44;&#x6E90;&#x7684;<strong>&#x8DEF;&#x5F84;</strong></li>
+<li>query-string: <strong>&#x641C;&#x7D22;&#x4E32;</strong>&#x3002;&#x662F;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x7684;<strong>&#x6570;&#x636E;</strong>&#x3002;&#x53EF;&#x9009;&#x3002;</li>
+<li>anchor: <strong>&#x951A;</strong>&#x3002;&#x53EF;&#x9009;&#x3002;</li>
+</ul>
+<h1 id="&#x67D0;&#x4E9B;&#x573A;&#x666F;"><a href="#&#x67D0;&#x4E9B;&#x573A;&#x666F;" class="headerlink" title="&#x67D0;&#x4E9B;&#x573A;&#x666F;"></a>&#x67D0;&#x4E9B;&#x573A;&#x666F;</h1><h2 id="&#x63D0;&#x53D6;&#x641C;&#x7D22;&#x4E32;-search-&#x5E76;&#x8F6C;&#x5316;&#x4E3A;&#x5BF9;&#x8C61;"><a href="#&#x63D0;&#x53D6;&#x641C;&#x7D22;&#x4E32;-search-&#x5E76;&#x8F6C;&#x5316;&#x4E3A;&#x5BF9;&#x8C61;" class="headerlink" title="&#x63D0;&#x53D6;&#x641C;&#x7D22;&#x4E32; search &#x5E76;&#x8F6C;&#x5316;&#x4E3A;&#x5BF9;&#x8C61;"></a>&#x63D0;&#x53D6;&#x641C;&#x7D22;&#x4E32; search &#x5E76;&#x8F6C;&#x5316;&#x4E3A;&#x5BF9;&#x8C61;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var searchObj = {};</span><br><span class="line">var searchArr = window.location.search.substring(1).split(&apos;&amp;&apos;);</span><br><span class="line"></span><br><span class="line">for(var i=0, len=searchArr.length; i&lt;len; i++) {</span><br><span class="line">    var elem = searchArr[i];</span><br><span class="line">    elem = elem.split(&apos;=&apos;);</span><br><span class="line">    searchObj[ decodeURIComponent(elem[0]) ] = decodeURIComponent(elem[1]);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">console.log(searchObj);</span><br></pre></td></tr></table></figure>
 
     
   </div>
