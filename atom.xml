@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-13T16:20:08.412Z</updated>
+  <updated>2016-11-01T15:06:12.453Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>了解 localStorage</title>
+    <link href="http://yoursite.com/2016/11/01/learn-about-localStorage/"/>
+    <id>http://yoursite.com/2016/11/01/learn-about-localStorage/</id>
+    <published>2016-11-01T15:01:11.000Z</published>
+    <updated>2016-11-01T15:06:12.453Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>学习jQuery源码（二）- 选择器</title>
@@ -888,34 +906,6 @@
     <summary type="html">
     
       &lt;p&gt;Vue.js &amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x521B;&amp;#x5EFA;&amp;#xFF1A;&lt;br&gt;&amp;#x4F7F;&amp;#x7528;&amp;#x6784;&amp;#x9020;&amp;#x51FD;&amp;#x6570;  ==&amp;gt;  var vm = new Vue( op
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-      <category term="Vue.js" scheme="http://yoursite.com/tags/Vue-js/"/>
-    
-      <category term="MVVM" scheme="http://yoursite.com/tags/MVVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue学习笔记（一） - 概述</title>
-    <link href="http://yoursite.com/2016/08/23/vue-brief-introduction/"/>
-    <id>http://yoursite.com/2016/08/23/vue-brief-introduction/</id>
-    <published>2016-08-23T15:39:31.000Z</published>
-    <updated>2016-08-26T14:59:10.764Z</updated>
-    
-    <content type="html">&lt;p&gt;Vue.js &amp;#x7684;&amp;#x7EC4;&amp;#x4EF6;&amp;#x7CFB;&amp;#x7EDF;&amp;#xFF0C;&amp;#x5176;&amp;#x5B9E;&amp;#x5C31;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&lt;strong&gt;&amp;#x7EC4;&amp;#x4EF6;&amp;#x6811;&lt;/strong&gt;&amp;#x2014;&amp;#x2014;&amp;#x4EE5;&amp;#x72EC;&amp;#x7ACB;&amp;#x53EF;&amp;#x590D;&amp;#x7528;&amp;#x7684;&amp;#x5C0F;&amp;#x7EC4;&amp;#x4EF6;&amp;#x6765;&amp;#x6784;&amp;#x5EFA;&amp;#x5927;&amp;#x578B;&amp;#x5E94;&amp;#x7528;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2016/08/23/vue-brief-introduction/vue-brief-01.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;====&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2016/08/23/vue-brief-introduction/vue-brief-02.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Vue.js &amp;#x7684;&amp;#x7EC4;&amp;#x4EF6;&amp;#x7CFB;&amp;#x7EDF;&amp;#xFF0C;&amp;#x5176;&amp;#x5B9E;&amp;#x5C31;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&lt;strong&gt;&amp;#x7EC4;&amp;#x4EF6;&amp;#x6811;&lt;/
     
     </summary>
     
