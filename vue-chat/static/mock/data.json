@@ -1,0 +1,102 @@
+{
+    "chat": [
+        {
+            "name": "Uzumaki Naruto",
+            "avatar": "./static/images/chat/avatar-yellow.jpg",
+            "latestWord": "笔直向前，说到做到",
+            "latestTime": "17:29",
+            "newMsg": true,
+            "msgCount": 2
+        },
+        {
+            "name": "樱木花道",
+            "avatar": "./static/images/chat/avatar-red.jpg",
+            "latestWord": "我果然是个天才",
+            "latestTime": "13:49",
+            "newMsg": true,
+            "msgCount": ""
+        },
+        {
+            "name": "Dwyane Wade",
+            "avatar": "./static/images/chat/avatar-blue.jpg",
+            "latestWord": "This is my house",
+            "latestTime": "09:21",
+            "newMsg": false,
+            "msgCount": ""
+        },
+        {
+            "name": "周杰伦",
+            "avatar": "./static/images/chat/avatar-green.jpg",
+            "latestWord": "哎哟，不错喔~",
+            "latestTime": "01:22",
+            "newMsg": true,
+            "msgCount": "99+"
+        }
+    ],
+    "contact": [
+        {
+            "title": "Uzumaki Naruto",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-yellow.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "U"
+        },{
+            "title": "Uchiha Itachi",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-blue.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "U"
+        },{
+            "title": "Dwyane Wade",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-red.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "D"
+        },{
+            "title": "周杰伦",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-yellow.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "Z"
+        },{
+            "title": "陈奕迅",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-green.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "C"
+        },{
+            "title": "林宥嘉",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-green.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "L"
+        },{
+            "title": "村上春树",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-yellow.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "C"
+        },{
+            "title": "东野圭吾",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-blue.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "D"
+        },{
+            "title": "林俊杰",
+            "icon": "",
+            "avatar": "./static/images/chat/avatar-blue.jpg",
+            "intro": "",
+            "hrefTo": "",
+            "category": "L"
+        }
+    ]
+}
