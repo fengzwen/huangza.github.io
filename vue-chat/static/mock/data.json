@@ -48,7 +48,8 @@
             "category": "Z",
             "gender": 1,
             "vcid": "vcid2017040717250001",
-            "region": ""
+            "region": "",
+            "remark": "小公举"
         },{
             "_uid": "0000000000000002",
             "name": "陈奕迅",
@@ -59,7 +60,8 @@
             "category": "C",
             "gender": 1,
             "vcid": "vcid2017040717250002",
-            "region": ""
+            "region": "",
+            "remark": "吹神"
         },{
             "_uid": "0000000000000003",
             "name": "林宥嘉",
@@ -169,7 +171,8 @@
             "category": "R",
             "gender": 0,
             "vcid": "vcid2017040717250012",
-            "region": ""
+            "region": "",
+            "remark": "太子妃"
         },{
             "_uid": "0000000000000013",
             "name": "日向宁次",
@@ -202,7 +205,8 @@
             "category": "X",
             "gender": 1,
             "vcid": "vcid2017040717250015",
-            "region": ""
+            "region": "",
+            "remark": "太子"
         },{
             "_uid": "0000000000000016",
             "name": "宇智波带土",
@@ -224,7 +228,8 @@
             "category": "Y",
             "gender": 1,
             "vcid": "vcid2017040717250017",
-            "region": ""
+            "region": "",
+            "remark": "尼桑"
         },{
             "_uid": "0000000000000018",
             "name": "宇智波佐助",
@@ -235,7 +240,8 @@
             "category": "Y",
             "gender": 1,
             "vcid": "vcid2017040717250018",
-            "region": ""
+            "region": "",
+            "remark": "二助子"
         },{
             "_uid": "0000000000000019",
             "name": "猿飞阿斯玛",
@@ -257,7 +263,8 @@
             "category": "Z",
             "gender": 1,
             "vcid": "vcid2017040717250020",
-            "region": ""
+            "region": "",
+            "remark": "好色仙人"
         },{
             "_uid": "0000000000000021",
             "name": "佐井",
@@ -279,7 +286,8 @@
             "category": "D",
             "gender": 1,
             "vcid": "vcid2017040717250022",
-            "region": ""
+            "region": "",
+            "remark": "骚韦"
         }
     ]
 }
